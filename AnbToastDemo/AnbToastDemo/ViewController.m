@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AnbToast.h"
+#import "PywToast.h"
 
 @interface ViewController ()
 
@@ -38,13 +39,16 @@
 {
     NSLog(@"*****************");
     // [UIImage imageNamed:@"toast_warning"]
-    [AnbToast showToastWithMessage:@"正在请求..." position:AnbToastPositionCenterLoadingTopWithFillet];
+    [PywToast showToastWithMessage:@"正在请求..." position:PywToastPositionCenterLoadingLeftWithFillet];
 //    [AnbToast showToastWithMessage:@"成功" iconImage:[UIImage imageNamed:@"toast_warning"] position:AnbToastPositionCenterLoadingLeft];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [PywToast hideToast];
+    });
 }
 - (void)hide:(id)sender
 {
     NSLog(@"================");
-    [AnbToast hideToast];
+    [PywToast hideToast];
 }
 
 

@@ -1,12 +1,12 @@
 //
-//  AnbToast.m
+//  PywToast.m
 //  PywToastDemo
 //
-//  Created by Ampaw on 2017/2/23.
+//  Created by Ampaw on 2017/2/26.
 //  Copyright © 2017年 Ampaw. All rights reserved.
 //
 
-#import "AnbToast.h"
+#import "PywToast.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -18,26 +18,15 @@
 #define BOTTOM_SPACE 80.f
 #define BOTTOM_HORIZONTAL_MAX_SPACE 20.f
 
-// 背景色+图标
-typedef NS_ENUM(NSInteger, AnbToastType) {
-    
-    AnbToastTypeDefault = 0, // 默认
-    AnbToastTypeSuccess = 1, // 成功
-    AnbToastTypeError   = 2, // 失败
-    AnbToastTypeWarning = 3, // 警告
-    AnbToastTypeLoading = 4, // 加载
-    
-};
 
-
-@interface AnbToast ()
-
+@interface PywToast ()
 // Toast加载菊花
 @property(nonatomic, strong) UIActivityIndicatorView *indicator;
 // Toast图标ImageView
 @property(nonatomic, strong) UIImageView    *iconImageView;
 // Toast内容Label
 @property(nonatomic, strong) UILabel        *messageLabel;
+@property(nonatomic, strong) UIView         *hudView;
 
 @property (nonatomic, copy) NSString        *messageString;
 @property (nonatomic, strong) UIImage       *iconImage;
@@ -45,10 +34,9 @@ typedef NS_ENUM(NSInteger, AnbToastType) {
 @property (nonatomic, assign) CGSize        messageLabelSize;
 @property (nonatomic, assign) CGSize        iconImageSize;
 @property (nonatomic, assign) CGRect        toastViewFrame;
-// 背景色
-@property (nonatomic, assign) AnbToastType  toastType;
+
 // Toast显示位置
-@property (nonatomic, assign) AnbToastPosition toastPosition;
+@property (nonatomic, assign) PywToastPosition toastPosition;
 
 //背景颜色
 @property (nonatomic, strong) UIColor* toastBackgroundColor;
@@ -67,29 +55,29 @@ typedef NS_ENUM(NSInteger, AnbToastType) {
 
 @end
 
-@implementation AnbToast
+@implementation PywToast
+
 
 static NSMutableArray* toastArray = nil;
 
 #pragma mark - ClassMethod
 + (void)hideToast
 {
-    AnbToast *toast = [[AnbToast alloc] init];
+    PywToast *toast = [[PywToast alloc] init];
     [toast hide];
 }
 + (void)showToastWithMessage:(NSString *)message
-                    position:(AnbToastPosition)position
+                    position:(PywToastPosition)position
 {
     [self showToastWithMessage:message iconImage:nil position:position];
 }
 + (void)showToastWithMessage:(NSString *)message
                    iconImage:(UIImage *)iconImg
-                    position:(AnbToastPosition)position
+                    position:(PywToastPosition)position
 {
-    AnbToast *toast = [[AnbToast alloc] initToastWithMessage:message
+    PywToast *toast = [[PywToast alloc] initToastWithMessage:message
                                                    iconImage:iconImg
                                                     duration:0
-                                                   toastType:AnbToastTypeDefault
                                                toastPosition:position];
     [toast show];
 }
@@ -101,16 +89,13 @@ static NSMutableArray* toastArray = nil;
  @param message 内容
  @param iconImage 图标
  @param duration 显示时长
- @param toastType toast类型
  @return 新建的Toast
  */
 - (instancetype)initToastWithMessage:(NSString *)message
                            iconImage:(UIImage*)iconImage
                             duration:(NSTimeInterval)duration
-                           toastType:(AnbToastType)toastType
-                       toastPosition:(AnbToastPosition)toastPosition{
+                       toastPosition:(PywToastPosition)toastPosition{
     
-    self.toastType = toastType;
     self.duration = duration;
     self.toastPosition = toastPosition;
     
@@ -118,7 +103,7 @@ static NSMutableArray* toastArray = nil;
 }
 
 - (instancetype)initToastWithMessage:(NSString *)message
-                            iconImage:(UIImage*)iconImage{
+                           iconImage:(UIImage*)iconImage{
     
     [self initToastConfig];
     
@@ -129,7 +114,7 @@ static NSMutableArray* toastArray = nil;
     self.messageString = message;
     
     if (iconImage == nil) {
-        if (self.toastType == AnbToastPositionDefault) {
+        if (self.toastPosition == PywToastPositionDefault) {
             self.iconImage = nil;
         }
     }else{
@@ -143,25 +128,33 @@ static NSMutableArray* toastArray = nil;
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
+        self.hudView = [[UIView alloc] init];
+        self.hudView.backgroundColor = [UIColor darkGrayColor];
         
-        if ([self isLoading]) {
-            
-            self.indicator = [[UIActivityIndicatorView alloc] init];
-            self.indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
-            [self.indicator startAnimating];
-            [self addSubview:self.indicator];
-        }
-        
+        self.indicator = [[UIActivityIndicatorView alloc] init];
+        self.indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+        [self.indicator startAnimating];
+
         self.iconImageView = [[UIImageView alloc]init];
         self.iconImageView.image = self.iconImage;
-        [self addSubview:self.iconImageView];
+        
         
         self.messageLabel = [[UILabel alloc]init];
         self.messageLabel.text = self.messageString;
         self.messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.messageLabel.textAlignment = NSTextAlignmentCenter;
         self.messageLabel.numberOfLines = 0;
-        [self addSubview:self.messageLabel];
+        
+        
+        if ([self isLoading])
+        {
+            [self.hudView addSubview:self.indicator];
+            [self.hudView addSubview:self.messageLabel];
+        } else
+        {
+            [self addSubview:self.iconImageView];
+            [self addSubview:self.messageLabel];
+        }
     }
     return self;
 }
@@ -174,45 +167,6 @@ static NSMutableArray* toastArray = nil;
     
     //默认背景色
     self.toastBackgroundColor = [UIColor darkGrayColor];
-    
-    //根据toastType设置背景色、icon
-    switch (self.toastType) {
-        case AnbToastPositionDefault: {
-            self.toastBackgroundColor = [UIColor darkGrayColor];
-            break;
-        }
-        case AnbToastTypeSuccess: {
-            self.toastBackgroundColor = [UIColor colorWithRed:31.f/255.f green:177.f/255.f blue:138.f/255.f alpha:1.f];
-            if (!_iconImage) {
-                self.iconImage = [self imageNamed:@"toast_success"];
-            }
-            break;
-        }
-        case AnbToastTypeError: {
-            self.toastBackgroundColor = [UIColor colorWithRed:255.f/255.f green:91.f/255.f blue:65.f/255.f alpha:1.f];
-            if (!_iconImage) {
-                self.iconImage = [self imageNamed:@"toast_error"];
-            }
-            break;
-        }
-        case AnbToastTypeWarning: {
-            self.toastBackgroundColor = [UIColor colorWithRed:255.f/255.f green:134.f/255.f blue:0.f/255.f alpha:1.f];
-            if (!_iconImage) {
-                self.iconImage = [self imageNamed:@"toast_warning"];
-            }
-            break;
-        }
-        case AnbToastTypeLoading: {
-            self.toastBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f blue:122.f/255.f alpha:1.f];
-            if (!_iconImage) {
-                self.iconImage = [self imageNamed:@"toast_info"];
-            }
-            break;
-        }
-            
-        default:
-            break;
-    }
     
     //TextColor
     self.messageTextColor = [UIColor whiteColor];
@@ -251,44 +205,53 @@ static NSMutableArray* toastArray = nil;
     
     //上滑消失
     switch (self.toastPosition) {
-        case AnbToastPositionDefault: {
-            self.frame = CGRectMake(_toastViewFrame.origin.x, -_toastViewFrame.size.height, _toastViewFrame.size.width, _toastViewFrame.size.height);
+        case PywToastPositionDefault: {
+            self.frame = CGRectMake(_toastViewFrame.origin.x,
+                                    -_toastViewFrame.size.height,
+                                    _toastViewFrame.size.width,
+                                    _toastViewFrame.size.height);
             break;
         }
-        case AnbToastPositionBelowStatusBar: {
-            self.frame = CGRectMake(_toastViewFrame.origin.x, -(_toastViewFrame.size.height + STATUSBAR_HEIGHT), _toastViewFrame.size.width, _toastViewFrame.size.height);
+        case PywToastPositionBelowStatusBar: {
+            self.frame = CGRectMake(_toastViewFrame.origin.x,
+                                    -(_toastViewFrame.size.height + STATUSBAR_HEIGHT),
+                                    _toastViewFrame.size.width,
+                                    _toastViewFrame.size.height);
             break;
         }
-        case AnbToastPositionBelowStatusBarWithFillet: {
-            self.frame = CGRectMake(_toastViewFrame.origin.x, -(_toastViewFrame.size.height + STATUSBAR_HEIGHT), _toastViewFrame.size.width, _toastViewFrame.size.height);
+        case PywToastPositionBelowStatusBarWithFillet: {
+            self.frame = CGRectMake(_toastViewFrame.origin.x,
+                                    -(_toastViewFrame.size.height + STATUSBAR_HEIGHT),
+                                    _toastViewFrame.size.width,
+                                    _toastViewFrame.size.height);
             break;
         }
-        case AnbToastPositionBottom: {
+        case PywToastPositionBottom: {
             self.frame = _toastViewFrame;
             self.alpha = 0.f;
             break;
         }
-        case AnbToastPositionBottomWithFillet: {
+        case PywToastPositionBottomWithFillet: {
             self.frame = _toastViewFrame;
             self.alpha = 0.f;
             break;
         }
-        case AnbToastPositionCenterLoadingLeft: {
+        case PywToastPositionCenterLoadingLeft: {
             self.frame = _toastViewFrame;
             self.alpha = 0.f;
             break;
         }
-        case AnbToastPositionCenterLoadingLeftWithFillet: {
+        case PywToastPositionCenterLoadingLeftWithFillet: {
             self.frame = _toastViewFrame;
             self.alpha = 0.f;
             break;
         }
-        case AnbToastPositionCenterLoadingTop: {
+        case PywToastPositionCenterLoadingTop: {
             self.frame = _toastViewFrame;
             self.alpha = 0.f;
             break;
         }
-        case AnbToastPositionCenterLoadingTopWithFillet: {
+        case PywToastPositionCenterLoadingTopWithFillet: {
             self.frame = _toastViewFrame;
             self.alpha = 0.f;
             break;
@@ -302,7 +265,7 @@ static NSMutableArray* toastArray = nil;
     [super layoutSubviews];
     
     CGFloat tempStatusBarHeight = 0;
-    if (self.toastPosition == AnbToastPositionDefault) {
+    if (self.toastPosition == PywToastPositionDefault) {
         tempStatusBarHeight = STATUSBAR_HEIGHT;
     }
     
@@ -312,7 +275,7 @@ static NSMutableArray* toastArray = nil;
     // 判断是不是网络请求加载
     if (![self isLoading])
     {
-    
+        
         CGFloat iconImageViewX = HORIZONTAL_SPACE;
         if (_messageLabelSize.width == 0) {
             iconImageViewX = (_toastViewFrame.size.width - _iconImageSize.width) / 2;
@@ -326,13 +289,13 @@ static NSMutableArray* toastArray = nil;
         if (_iconImageSize.width == 0) {
             messageLabelX = (_toastViewFrame.size.width - _messageLabelSize.width) / 2;
         }
-        messageLabelY = (self.toastViewFrame.size.height - self.messageLabelSize.height - tempStatusBarHeight)/2 + tempStatusBarHeight;
+        messageLabelY = (_toastViewFrame.size.height - self.messageLabelSize.height - tempStatusBarHeight)/2 + tempStatusBarHeight;
     }
     else
     {
         // 菊花在文字左边
-        if (self.toastPosition == AnbToastPositionCenterLoadingLeft
-            || self.toastPosition == AnbToastPositionCenterLoadingLeftWithFillet)
+        if (self.toastPosition == PywToastPositionCenterLoadingLeft
+            || self.toastPosition == PywToastPositionCenterLoadingLeftWithFillet)
         {
             
             CGFloat indicatorX = HORIZONTAL_SPACE;
@@ -348,8 +311,8 @@ static NSMutableArray* toastArray = nil;
             messageLabelY = (self.toastViewFrame.size.height - self.messageLabelSize.height - tempStatusBarHeight)/2 + tempStatusBarHeight;
         }
         // 菊花在文字上边
-        else if (self.toastPosition == AnbToastPositionCenterLoadingTop
-                   || self.toastPosition == AnbToastPositionCenterLoadingTopWithFillet)
+        else if (self.toastPosition == PywToastPositionCenterLoadingTop
+                 || self.toastPosition == PywToastPositionCenterLoadingTopWithFillet)
         {
             CGFloat indicatorX = (_toastViewFrame.size.width - INDICATOR_W_H) / 2;
             CGFloat indicatorY = VERTICAL_SPACE;
@@ -365,6 +328,15 @@ static NSMutableArray* toastArray = nil;
     CGFloat messageLabelW = self.messageLabelSize.width;
     CGFloat messageLabelH = self.messageLabelSize.height;
     self.messageLabel.frame = CGRectMake(messageLabelX, messageLabelY, messageLabelW, messageLabelH);
+    
+    if ([self isLoading]) {
+        UIView *parent = self.superview;
+        if (parent) {
+            self.frame = parent.bounds;
+        }
+        parent.alpha = 0.8;
+        self.hudView.frame = CGRectMake((SCREEN_WIDTH - self.toastViewFrame.size.width) / 2, (SCREEN_HEIGHT - self.toastViewFrame.size.height) / 2, self.toastViewFrame.size.width, self.toastViewFrame.size.height);
+    }
 }
 
 #pragma mark - show & hide
@@ -381,7 +353,6 @@ static NSMutableArray* toastArray = nil;
     }
     
     @synchronized (toastArray) {
-        
         UIWindow *windowView = [UIApplication sharedApplication].keyWindow;
         [windowView addSubview:self];
         
@@ -412,16 +383,16 @@ static NSMutableArray* toastArray = nil;
     if (toastArray && [toastArray count] > 0) {
         @synchronized (toastArray) {
             
-            AnbToast* toast = toastArray[0];
+            PywToast* toast = toastArray[0];
             [NSRunLoop cancelPreviousPerformRequestsWithTarget:toast];
             [toastArray removeObject:toast];
             
             if (self.dismissToastAnimated == YES
-                && _toastPosition != AnbToastPositionBottom
-                && _toastPosition != AnbToastPositionBottomWithFillet) {
+                && _toastPosition != PywToastPositionBottom
+                && _toastPosition != PywToastPositionBottomWithFillet) {
                 
                 CGFloat tempStatusBarHeight = 0;
-                if (self.toastPosition == AnbToastPositionDefault) {
+                if (self.toastPosition == PywToastPositionDefault) {
                     tempStatusBarHeight = STATUSBAR_HEIGHT;
                 }
                 
@@ -467,11 +438,11 @@ static NSMutableArray* toastArray = nil;
         textMaxWidth = SCREEN_WIDTH - _iconImageSize.width - 3*HORIZONTAL_SPACE;
     }
     
-    if (self.toastPosition == AnbToastPositionBelowStatusBar
-        || self.toastPosition == AnbToastPositionBelowStatusBarWithFillet) {
+    if (self.toastPosition == PywToastPositionBelowStatusBar
+        || self.toastPosition == PywToastPositionBelowStatusBarWithFillet) {
         textMaxWidth -= 2*HORIZONTAL_SPACE;
-    }else if(self.toastPosition == AnbToastPositionBottom
-             || self.toastPosition == AnbToastPositionBottomWithFillet){
+    }else if(self.toastPosition == PywToastPositionBottom
+             || self.toastPosition == PywToastPositionBottomWithFillet){
         textMaxWidth -= 2*BOTTOM_HORIZONTAL_MAX_SPACE;
     }
     
@@ -502,17 +473,17 @@ static NSMutableArray* toastArray = nil;
     }
     
     switch (self.toastPosition) {
-        case AnbToastPositionDefault: {
+        case PywToastPositionDefault: {
             toastViewW = SCREEN_WIDTH;
             toastViewH += STATUSBAR_HEIGHT;
             break;
         }
-        case AnbToastPositionBelowStatusBar: {
+        case PywToastPositionBelowStatusBar: {
             toastViewY = STATUSBAR_HEIGHT;
             toastViewW = SCREEN_WIDTH;
             break;
         }
-        case AnbToastPositionBelowStatusBarWithFillet: {
+        case PywToastPositionBelowStatusBarWithFillet: {
             toastViewX = HORIZONTAL_SPACE;
             toastViewY = STATUSBAR_HEIGHT;
             toastViewW = SCREEN_WIDTH - 2*HORIZONTAL_SPACE;
@@ -525,7 +496,7 @@ static NSMutableArray* toastArray = nil;
             
             break;
         }
-        case AnbToastPositionBottom: {
+        case PywToastPositionBottom: {
             
             toastViewW = _messageLabelSize.width + 2* HORIZONTAL_SPACE;
             
@@ -539,7 +510,7 @@ static NSMutableArray* toastArray = nil;
             
             break;
         }
-        case AnbToastPositionBottomWithFillet: {
+        case PywToastPositionBottomWithFillet: {
             
             toastViewW = _messageLabelSize.width + 2* HORIZONTAL_SPACE;
             
@@ -561,10 +532,10 @@ static NSMutableArray* toastArray = nil;
             }
             self.layer.cornerRadius = _toastCornerRadius;
             self.layer.masksToBounds = YES;
-        
+            
             break;
         }
-        case AnbToastPositionCenterLoadingTop: {
+        case PywToastPositionCenterLoadingTop: {
             
             toastViewW = (_messageLabelSize.width + 2 * HORIZONTAL_SPACE) > (INDICATOR_W_H + 2 * HORIZONTAL_SPACE) ? (_messageLabelSize.width + 2 * HORIZONTAL_SPACE) : (INDICATOR_W_H + 2 * HORIZONTAL_SPACE);
             
@@ -574,7 +545,7 @@ static NSMutableArray* toastArray = nil;
             
             break;
         }
-        case AnbToastPositionCenterLoadingTopWithFillet: {
+        case PywToastPositionCenterLoadingTopWithFillet: {
             
             toastViewW = (_messageLabelSize.width + 2 * HORIZONTAL_SPACE) > (INDICATOR_W_H + 2 * HORIZONTAL_SPACE) ? (_messageLabelSize.width + 2 * HORIZONTAL_SPACE) : (INDICATOR_W_H + 2 * HORIZONTAL_SPACE);
             
@@ -590,7 +561,7 @@ static NSMutableArray* toastArray = nil;
             
             break;
         }
-        case AnbToastPositionCenterLoadingLeft: {
+        case PywToastPositionCenterLoadingLeft: {
             
             toastViewW = INDICATOR_W_H + _messageLabelSize.width + 2 * BOTTOM_HORIZONTAL_MAX_SPACE;
             
@@ -599,9 +570,9 @@ static NSMutableArray* toastArray = nil;
             
             break;
         }
-        case AnbToastPositionCenterLoadingLeftWithFillet: {
+        case PywToastPositionCenterLoadingLeftWithFillet: {
             
-           toastViewW = INDICATOR_W_H + _messageLabelSize.width + 3 * HORIZONTAL_SPACE;
+            toastViewW = INDICATOR_W_H + _messageLabelSize.width + 3 * HORIZONTAL_SPACE;
             
             toastViewX = (SCREEN_WIDTH - toastViewW)/2;
             toastViewY = (SCREEN_HEIGHT - toastViewH) / 2;
@@ -667,10 +638,10 @@ static NSMutableArray* toastArray = nil;
  */
 - (BOOL)isLoading
 {
-    return (   self.toastPosition == AnbToastPositionCenterLoadingLeft
-            || self.toastPosition == AnbToastPositionCenterLoadingLeftWithFillet
-            || self.toastPosition == AnbToastPositionCenterLoadingTop
-            || self.toastPosition == AnbToastPositionCenterLoadingTopWithFillet);
+    return (   self.toastPosition == PywToastPositionCenterLoadingLeft
+            || self.toastPosition == PywToastPositionCenterLoadingLeftWithFillet
+            || self.toastPosition == PywToastPositionCenterLoadingTop
+            || self.toastPosition == PywToastPositionCenterLoadingTopWithFillet);
 }
 
 @end
