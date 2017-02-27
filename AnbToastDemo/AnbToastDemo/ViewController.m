@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "AnbToast.h"
 #import "PywToast.h"
+#import "PywProgressHUD.h"
 
 @interface ViewController ()
 
@@ -39,8 +40,9 @@
 {
     NSLog(@"*****************");
     // [UIImage imageNamed:@"toast_warning"]
-    [PywToast showToastWithMessage:@"正在请求..." position:PywToastPositionCenterLoadingLeftWithFillet];
+    [PywToast showToastWithMessage:@"正在请求..." position:PywToastPositionBelowStatusBar];
 //    [AnbToast showToastWithMessage:@"成功" iconImage:[UIImage imageNamed:@"toast_warning"] position:AnbToastPositionCenterLoadingLeft];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [PywToast hideToast];
     });

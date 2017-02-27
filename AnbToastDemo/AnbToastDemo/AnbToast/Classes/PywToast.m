@@ -142,7 +142,7 @@ static NSMutableArray* toastArray = nil;
         self.messageLabel = [[UILabel alloc]init];
         self.messageLabel.text = self.messageString;
         self.messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        self.messageLabel.textAlignment = NSTextAlignmentCenter;
+        self.messageLabel.textAlignment = NSTextAlignmentLeft;
         self.messageLabel.numberOfLines = 0;
         
         
