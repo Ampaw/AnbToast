@@ -1,12 +1,12 @@
 //
-//  Button.m
+//  PywCustomButton.m
 //  PywAppDemo
 //
 //  Created by Ampaw on 2017/2/28.
 //  Copyright © 2017年 Ampaw. All rights reserved.
 //
 
-#import "Button.h"
+#import "PywCustomButton.h"
 
 //    按钮中文本和图片的间隔
 #define padding 10
@@ -20,20 +20,23 @@
 #define imageWidth self.imageView.bounds.size.width
 #define imageHeight self.imageView.bounds.size.height
 
+@interface PywCustomButton ()
+@property(nonatomic, assign) PywCustomButtonStatus status;
+@end
 
-@implementation Button
+@implementation PywCustomButton
 
-+ (instancetype)button
++ (instancetype)buttonWithAlignmentStatus:(PywCustomButtonStatus)status
 {
-    return [[self alloc] init];
+    return [[self alloc] initWithAlignmentStatus:status];
 }
-- (instancetype)initWithAlignmentStatus:(ButtonStatus)status
+- (instancetype)initWithAlignmentStatus:(PywCustomButtonStatus)status
 {
-    Button *button = [[Button alloc] init];
+    PywCustomButton *button = [[PywCustomButton alloc] init];
     button.status = status;
     return button;
 }
-- (void)setStatus:(ButtonStatus)status
+- (void)setStatus:(PywCustomButtonStatus)status
 {
     _status = status;
 }
@@ -127,29 +130,29 @@
     [super layoutSubviews];
     
     switch (_status) {
-        case ButtonStatusNormal:
+        case PywCustomButtonStatusNormal:
             break;
-        case ButtonStatusLeft:
+        case PywCustomButtonStatusLeft:
         {
             [self alignmentLeft];
         }
             break;
-        case ButtonStatusRight:
+        case PywCustomButtonStatusRight:
         {
             [self alignmentRight];
         }
             break;
-        case ButtonStatusCenter:
+        case PywCustomButtonStatusCenter:
         {
             [self alignmentCenter];
         }
             break;
-        case ButtonStatusTop:
+        case PywCustomButtonStatusTop:
         {
             [self alignmentTop];
         }
             break;
-        case ButtonStatusBottom:
+        case PywCustomButtonStatusBottom:
         {
             [self alignmentBottom];
         }
