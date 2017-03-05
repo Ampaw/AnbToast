@@ -7,10 +7,13 @@
 //
 
 #import "ViewController.h"
-#import "PywButton.h"
+#import "Button.h"
+#import "PywLoginView.h"
+#import "Masonry.h"
 
 @interface ViewController ()
-@property(nonatomic, strong) PywButton *changeBtn;
+@property(nonatomic, strong) Button *loginBtn;
+@property(nonatomic, strong) PywLoginView *loginView;
 
 @end
 
@@ -20,20 +23,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    PywButton *btn5 = [[PywButton alloc] initWithAlignmentStatus:PywButtonStatusRight];
-    [btn5 setBackgroundColor:[UIColor orangeColor]];
-    [btn5 setImage:[UIImage imageNamed:@"tabbar_discover"] forState:UIControlStateNormal];
-    [btn5 setTitle:@"这里是按钮的文字" forState:UIControlStateNormal];
-    btn5.titleLabel.font = [UIFont systemFontOfSize:20];
-    [btn5 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    btn5.frame = CGRectMake(100, 350, 200, 80);
-    [btn5 addTarget:self action:@selector(changeTitle:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn5];
-    self.changeBtn = btn5;
+    Button *loginBtn = [[Button alloc] initWithAlignmentStatus:ButtonStatusNormal];
+    [loginBtn setBackgroundColor:[UIColor blueColor]];
+    [loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
+    loginBtn.titleLabel.font = [UIFont systemFontOfSize:20];
+    loginBtn.frame = CGRectMake(100, 100, 80, 40);
+    [loginBtn addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:loginBtn];
+    self.loginBtn = loginBtn;
+    
+    self.loginView = [[PywLoginView alloc] init];
+    
 }
-- (void)changeTitle:(id)sender
+- (void)login:(id)sender
 {
-    [self.changeBtn setTitle:@"按钮" forState:UIControlStateNormal];
+    NSLog(@"%s",__FUNCTION__);
+    [self.loginView show];
 }
 
 
