@@ -10,6 +10,7 @@
 #import "Button.h"
 #import "PywLoginView.h"
 #import "Masonry.h"
+#import "PywAlertSelectView.h"
 
 @interface ViewController ()
 @property(nonatomic, strong) Button *loginBtn;
@@ -38,7 +39,9 @@
 - (void)login:(id)sender
 {
     NSLog(@"%s",__FUNCTION__);
-    [self.loginView show];
+//    [self.loginView show];
+    PywAlertSelectView *alertView = [[PywAlertSelectView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT)];
+    [alertView alertSelectViewshow];
 }
 
 

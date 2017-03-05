@@ -18,6 +18,9 @@
 		DC78019E1E65BCE100F0EB88 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801911E65BCE100F0EB88 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		DC78019F1E65BCE100F0EB88 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801931E65BCE100F0EB88 /* View+MASAdditions.m */; };
 		DC7801A01E65BCE100F0EB88 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801961E65BCE100F0EB88 /* ViewController+MASAdditions.m */; };
+		DC7801B51E6C0D1400F0EB88 /* PywAlertSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801B41E6C0D1400F0EB88 /* PywAlertSelectView.m */; };
+		DC7801B81E6C0D6000F0EB88 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801B71E6C0D6000F0EB88 /* UIView+Frame.m */; };
+		DC7801BB1E6C0E4B00F0EB88 /* PywTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801BA1E6C0E4B00F0EB88 /* PywTextSize.m */; };
 		DCE5DDA31E654AD000796094 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE5DDA21E654AD000796094 /* main.m */; };
 		DCE5DDA61E654AD000796094 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE5DDA51E654AD000796094 /* AppDelegate.m */; };
 		DCE5DDA91E654AD000796094 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE5DDA81E654AD000796094 /* ViewController.m */; };
@@ -74,6 +77,12 @@
 		DC7801941E65BCE100F0EB88 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		DC7801951E65BCE100F0EB88 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		DC7801961E65BCE100F0EB88 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		DC7801B31E6C0D1400F0EB88 /* PywAlertSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywAlertSelectView.h; sourceTree = "<group>"; };
+		DC7801B41E6C0D1400F0EB88 /* PywAlertSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywAlertSelectView.m; sourceTree = "<group>"; };
+		DC7801B61E6C0D6000F0EB88 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		DC7801B71E6C0D6000F0EB88 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		DC7801B91E6C0E4B00F0EB88 /* PywTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywTextSize.h; sourceTree = "<group>"; };
+		DC7801BA1E6C0E4B00F0EB88 /* PywTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywTextSize.m; sourceTree = "<group>"; };
 		DCE5DD9E1E654AD000796094 /* PywAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PywAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE5DDA21E654AD000796094 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCE5DDA41E654AD000796094 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -124,6 +133,12 @@
 			children = (
 				DC78017A1E65BB3100F0EB88 /* PywLoginView.h */,
 				DC78017B1E65BB3100F0EB88 /* PywLoginView.m */,
+				DC7801B31E6C0D1400F0EB88 /* PywAlertSelectView.h */,
+				DC7801B41E6C0D1400F0EB88 /* PywAlertSelectView.m */,
+				DC7801B61E6C0D6000F0EB88 /* UIView+Frame.h */,
+				DC7801B71E6C0D6000F0EB88 /* UIView+Frame.m */,
+				DC7801B91E6C0E4B00F0EB88 /* PywTextSize.h */,
+				DC7801BA1E6C0E4B00F0EB88 /* PywTextSize.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -369,9 +384,11 @@
 			files = (
 				DC78019E1E65BCE100F0EB88 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				DCE5DDA91E654AD000796094 /* ViewController.m in Sources */,
+				DC7801B51E6C0D1400F0EB88 /* PywAlertSelectView.m in Sources */,
 				DC78019C1E65BCE100F0EB88 /* MASViewConstraint.m in Sources */,
 				DC78017C1E65BB3100F0EB88 /* PywLoginView.m in Sources */,
 				DCE5DDA61E654AD000796094 /* AppDelegate.m in Sources */,
+				DC7801BB1E6C0E4B00F0EB88 /* PywTextSize.m in Sources */,
 				DCE5DDDB1E654B5C00796094 /* Button.m in Sources */,
 				DC78019F1E65BCE100F0EB88 /* View+MASAdditions.m in Sources */,
 				DC7801971E65BCE100F0EB88 /* MASCompositeConstraint.m in Sources */,
@@ -380,6 +397,7 @@
 				DC78019D1E65BCE100F0EB88 /* NSArray+MASAdditions.m in Sources */,
 				DC7801A01E65BCE100F0EB88 /* ViewController+MASAdditions.m in Sources */,
 				DC7801981E65BCE100F0EB88 /* MASConstraint.m in Sources */,
+				DC7801B81E6C0D6000F0EB88 /* UIView+Frame.m in Sources */,
 				DC78019A1E65BCE100F0EB88 /* MASLayoutConstraint.m in Sources */,
 				DCE5DDA31E654AD000796094 /* main.m in Sources */,
 			);
