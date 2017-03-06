@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC78017C1E65BB3100F0EB88 /* PywLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC78017B1E65BB3100F0EB88 /* PywLoginView.m */; };
+		DC78017C1E65BB3100F0EB88 /* PywLoginCeShiView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC78017B1E65BB3100F0EB88 /* PywLoginCeShiView.m */; };
 		DC7801971E65BCE100F0EB88 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = DC78017F1E65BCE100F0EB88 /* MASCompositeConstraint.m */; };
 		DC7801981E65BCE100F0EB88 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801821E65BCE100F0EB88 /* MASConstraint.m */; };
 		DC7801991E65BCE100F0EB88 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801841E65BCE100F0EB88 /* MASConstraintMaker.m */; };
@@ -21,6 +21,13 @@
 		DC7801B51E6C0D1400F0EB88 /* PywAlertSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801B41E6C0D1400F0EB88 /* PywAlertSelectView.m */; };
 		DC7801B81E6C0D6000F0EB88 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801B71E6C0D6000F0EB88 /* UIView+Frame.m */; };
 		DC7801BB1E6C0E4B00F0EB88 /* PywTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801BA1E6C0E4B00F0EB88 /* PywTextSize.m */; };
+		DC9988791E6DB32A00174B64 /* PywLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988751E6DB32A00174B64 /* PywLoginView.m */; };
+		DC99887A1E6DB32A00174B64 /* PywLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988751E6DB32A00174B64 /* PywLoginView.m */; };
+		DC99887B1E6DB32A00174B64 /* PywLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988751E6DB32A00174B64 /* PywLoginView.m */; };
+		DC99887C1E6DB32A00174B64 /* PywTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988761E6DB32A00174B64 /* PywTextField.m */; };
+		DC99887D1E6DB32A00174B64 /* PywTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988761E6DB32A00174B64 /* PywTextField.m */; };
+		DC99887E1E6DB32A00174B64 /* PywTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988761E6DB32A00174B64 /* PywTextField.m */; };
+		DCB5C6D81E6DA31A004C97B5 /* PywBaseAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB5C6D71E6DA31A004C97B5 /* PywBaseAlertView.m */; };
 		DCE5DDA31E654AD000796094 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE5DDA21E654AD000796094 /* main.m */; };
 		DCE5DDA61E654AD000796094 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE5DDA51E654AD000796094 /* AppDelegate.m */; };
 		DCE5DDA91E654AD000796094 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE5DDA81E654AD000796094 /* ViewController.m */; };
@@ -50,8 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DC78017A1E65BB3100F0EB88 /* PywLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywLoginView.h; sourceTree = "<group>"; };
-		DC78017B1E65BB3100F0EB88 /* PywLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywLoginView.m; sourceTree = "<group>"; };
+		DC78017A1E65BB3100F0EB88 /* PywLoginCeShiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywLoginCeShiView.h; sourceTree = "<group>"; };
+		DC78017B1E65BB3100F0EB88 /* PywLoginCeShiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywLoginCeShiView.m; sourceTree = "<group>"; };
 		DC78017E1E65BCE100F0EB88 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		DC78017F1E65BCE100F0EB88 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		DC7801801E65BCE100F0EB88 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -83,6 +90,12 @@
 		DC7801B71E6C0D6000F0EB88 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		DC7801B91E6C0E4B00F0EB88 /* PywTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywTextSize.h; sourceTree = "<group>"; };
 		DC7801BA1E6C0E4B00F0EB88 /* PywTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywTextSize.m; sourceTree = "<group>"; };
+		DC9988751E6DB32A00174B64 /* PywLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywLoginView.m; sourceTree = "<group>"; };
+		DC9988761E6DB32A00174B64 /* PywTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywTextField.m; sourceTree = "<group>"; };
+		DC9988771E6DB32A00174B64 /* PywLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywLoginView.h; sourceTree = "<group>"; };
+		DC9988781E6DB32A00174B64 /* PywTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywTextField.h; sourceTree = "<group>"; };
+		DCB5C6D61E6DA31A004C97B5 /* PywBaseAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywBaseAlertView.h; sourceTree = "<group>"; };
+		DCB5C6D71E6DA31A004C97B5 /* PywBaseAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywBaseAlertView.m; sourceTree = "<group>"; };
 		DCE5DD9E1E654AD000796094 /* PywAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PywAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE5DDA21E654AD000796094 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCE5DDA41E654AD000796094 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -131,14 +144,20 @@
 		DC7801791E65BB1C00F0EB88 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				DC78017A1E65BB3100F0EB88 /* PywLoginView.h */,
-				DC78017B1E65BB3100F0EB88 /* PywLoginView.m */,
+				DC9988771E6DB32A00174B64 /* PywLoginView.h */,
+				DC9988751E6DB32A00174B64 /* PywLoginView.m */,
+				DC9988781E6DB32A00174B64 /* PywTextField.h */,
+				DC9988761E6DB32A00174B64 /* PywTextField.m */,
+				DC78017A1E65BB3100F0EB88 /* PywLoginCeShiView.h */,
+				DC78017B1E65BB3100F0EB88 /* PywLoginCeShiView.m */,
 				DC7801B31E6C0D1400F0EB88 /* PywAlertSelectView.h */,
 				DC7801B41E6C0D1400F0EB88 /* PywAlertSelectView.m */,
 				DC7801B61E6C0D6000F0EB88 /* UIView+Frame.h */,
 				DC7801B71E6C0D6000F0EB88 /* UIView+Frame.m */,
 				DC7801B91E6C0E4B00F0EB88 /* PywTextSize.h */,
 				DC7801BA1E6C0E4B00F0EB88 /* PywTextSize.m */,
+				DCB5C6D61E6DA31A004C97B5 /* PywBaseAlertView.h */,
+				DCB5C6D71E6DA31A004C97B5 /* PywBaseAlertView.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -383,13 +402,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC78019E1E65BCE100F0EB88 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				DC9988791E6DB32A00174B64 /* PywLoginView.m in Sources */,
 				DCE5DDA91E654AD000796094 /* ViewController.m in Sources */,
 				DC7801B51E6C0D1400F0EB88 /* PywAlertSelectView.m in Sources */,
 				DC78019C1E65BCE100F0EB88 /* MASViewConstraint.m in Sources */,
-				DC78017C1E65BB3100F0EB88 /* PywLoginView.m in Sources */,
+				DC78017C1E65BB3100F0EB88 /* PywLoginCeShiView.m in Sources */,
 				DCE5DDA61E654AD000796094 /* AppDelegate.m in Sources */,
 				DC7801BB1E6C0E4B00F0EB88 /* PywTextSize.m in Sources */,
 				DCE5DDDB1E654B5C00796094 /* Button.m in Sources */,
+				DC99887C1E6DB32A00174B64 /* PywTextField.m in Sources */,
+				DCB5C6D81E6DA31A004C97B5 /* PywBaseAlertView.m in Sources */,
 				DC78019F1E65BCE100F0EB88 /* View+MASAdditions.m in Sources */,
 				DC7801971E65BCE100F0EB88 /* MASCompositeConstraint.m in Sources */,
 				DC78019B1E65BCE100F0EB88 /* MASViewAttribute.m in Sources */,
@@ -407,7 +429,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC99887D1E6DB32A00174B64 /* PywTextField.m in Sources */,
 				DCE5DDBC1E654AD000796094 /* PywAppDemoTests.m in Sources */,
+				DC99887A1E6DB32A00174B64 /* PywLoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +439,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC99887E1E6DB32A00174B64 /* PywTextField.m in Sources */,
 				DCE5DDC71E654AD000796094 /* PywAppDemoUITests.m in Sources */,
+				DC99887B1E6DB32A00174B64 /* PywLoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

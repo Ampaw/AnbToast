@@ -8,13 +8,13 @@
 
 #import "ViewController.h"
 #import "Button.h"
-#import "PywLoginView.h"
 #import "Masonry.h"
 #import "PywAlertSelectView.h"
+#import "PywBaseAlertView.h"
+#import "PywLoginView.h"
 
-@interface ViewController ()
+@interface ViewController ()<PywLoginViewDelegate>
 @property(nonatomic, strong) Button *loginBtn;
-@property(nonatomic, strong) PywLoginView *loginView;
 
 @end
 
@@ -33,15 +33,37 @@
     [self.view addSubview:loginBtn];
     self.loginBtn = loginBtn;
     
-    self.loginView = [[PywLoginView alloc] init];
-    
 }
+
 - (void)login:(id)sender
 {
     NSLog(@"%s",__FUNCTION__);
-//    [self.loginView show];
-    PywAlertSelectView *alertView = [[PywAlertSelectView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT)];
-    [alertView alertSelectViewshow];
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT / 2)];
+//    view.backgroundColor = [UIColor blueColor];
+//    
+//    UIButton *btn = [[UIButton alloc] init];
+//    btn.backgroundColor = [UIColor whiteColor];
+//    [view addSubview:btn];
+//    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.top.right.offset(0);
+//        make.height.mas_equalTo(50);
+//    }];
+//    
+//    UITextField *text = [[UITextField alloc] init];
+//    text.backgroundColor = [UIColor whiteColor];
+//    [view addSubview:text];
+//    [text mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.bottom.right.offset(0);
+//        make.height.mas_equalTo(50);
+//    }];
+    
+    PywLoginView *loginView = [[PywLoginView alloc] initWithDelegate:self];
+    loginView.backgroundColor = [UIColor whiteColor];
+    loginView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT / 2);
+    
+    PywBaseAlertView *baseAlert = [[PywBaseAlertView alloc] initWithContentsSubView:loginView];
+    baseAlert.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [baseAlert show];
 }
 
 
