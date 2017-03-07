@@ -24,16 +24,42 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    PywCustomButton *btn5 = [PywCustomButton buttonWithAlignmentStatus:PywCustomButtonStatusLeft];
+    [self barButtonItem];
+
+    
+    PywCustomButton *btn5 = [PywCustomButton buttonWithAlignmentStatus:PywCustomButtonStatusTop];
     [btn5 setBackgroundColor:[UIColor orangeColor]];
     [btn5 setImage:[UIImage imageNamed:@"tabbar_discover"] forState:UIControlStateNormal];
     [btn5 setTitle:@"按钮" forState:UIControlStateNormal];
-    btn5.titleLabel.font = [UIFont systemFontOfSize:20];
+    btn5.titleLabel.font = [UIFont systemFontOfSize:14];
     [btn5 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    btn5.frame = CGRectMake(100, 100, 100, 40);
+    btn5.frame = CGRectMake(100, 100, 100, 50);
     [btn5 addTarget:self action:@selector(changeTitle:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn5];
     self.changeBtn = btn5;
+}
+
+- (void)barButtonItem
+{
+    UIView * homeButtonView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
+    UIImageView * homeButtonImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    homeButtonImageView.image = [UIImage imageNamed:@"icon_12"];
+    UIButton * homeButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
+    homeButton.backgroundColor = [UIColor clearColor];
+    [homeButton addTarget:self action:@selector(tapRightItem) forControlEvents:UIControlEventTouchUpInside];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 10, 10)];
+    label.text = @"2";
+    label.textColor = [UIColor whiteColor];
+    label.backgroundColor=[UIColor redColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.layer.cornerRadius=5;
+    label.layer.masksToBounds =YES;
+    label.font = [UIFont systemFontOfSize:11];
+    [homeButton addSubview:label];
+    [homeButtonView addSubview:homeButtonImageView];
+    [homeButtonView addSubview:homeButton];
+    UIBarButtonItem *homeButtonItem = [[UIBarButtonItem alloc]initWithCustomView:homeButtonView];
+     self.navigationItem.rightBarButtonItem=homeButtonItem;
 }
 - (void)changeTitle:(id)sender
 {
