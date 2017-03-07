@@ -1,26 +1,26 @@
 //
-//  PywBaseAlertView.m
+//  PywSelectAlertView.m
 //  PywAppDemo
 //
 //  Created by Ampaw on 2017/3/6.
 //  Copyright © 2017年 Ampaw. All rights reserved.
 //
 
-#import "PywBaseAlertView.h"
+#import "PywSelectAlertView.h"
 #import "UIView+Frame.h"
 #import "Masonry.h"
 
 #define AlertViewContactHeight 180
 #define AlertViewAddressHeight 280
 
-@interface PywBaseAlertView ()
+@interface PywSelectAlertView ()
 @property (nonatomic, strong) UIView *bgView;
 @property (nonatomic, strong) UIView *contentsView;
 
 @property (nonatomic, strong) UIView *subView;
 @end
 
-@implementation PywBaseAlertView
+@implementation PywSelectAlertView
 
 - (instancetype)initWithContentsSubView:(UIView *)subView
 {
@@ -50,7 +50,8 @@
     }];
 }
 
-- (void)show {
+- (void)showSelectAlertView
+{
     if (self.contentsView) return;
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     self.contentsView = [[UIView alloc] initWithFrame:CGRectMake(0,
@@ -75,7 +76,8 @@
     [window addSubview:self];
 }
 
-- (void)hide {
+- (void)dismissSelectAlertView
+{
     [UIView animateWithDuration:0.5 animations:^{
         self.contentsView.y = SCREENHEIGHT;
         self.bgView.alpha = 0;
@@ -88,7 +90,7 @@
 
 #pragma mark - EventAction
 - (void)tap:(UITapGestureRecognizer *)tap {
-    [self hide];
+    [self dismissSelectAlertView];
 }
 
 #pragma mark - Lazy

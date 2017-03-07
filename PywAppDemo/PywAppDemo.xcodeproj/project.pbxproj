@@ -27,7 +27,7 @@
 		DC99887C1E6DB32A00174B64 /* PywTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988761E6DB32A00174B64 /* PywTextField.m */; };
 		DC99887D1E6DB32A00174B64 /* PywTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988761E6DB32A00174B64 /* PywTextField.m */; };
 		DC99887E1E6DB32A00174B64 /* PywTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988761E6DB32A00174B64 /* PywTextField.m */; };
-		DCB5C6D81E6DA31A004C97B5 /* PywBaseAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB5C6D71E6DA31A004C97B5 /* PywBaseAlertView.m */; };
+		DCB5C6D81E6DA31A004C97B5 /* PywSelectAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB5C6D71E6DA31A004C97B5 /* PywSelectAlertView.m */; };
 		DCE5DDA31E654AD000796094 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE5DDA21E654AD000796094 /* main.m */; };
 		DCE5DDA61E654AD000796094 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE5DDA51E654AD000796094 /* AppDelegate.m */; };
 		DCE5DDA91E654AD000796094 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE5DDA81E654AD000796094 /* ViewController.m */; };
@@ -94,8 +94,8 @@
 		DC9988761E6DB32A00174B64 /* PywTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywTextField.m; sourceTree = "<group>"; };
 		DC9988771E6DB32A00174B64 /* PywLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywLoginView.h; sourceTree = "<group>"; };
 		DC9988781E6DB32A00174B64 /* PywTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywTextField.h; sourceTree = "<group>"; };
-		DCB5C6D61E6DA31A004C97B5 /* PywBaseAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywBaseAlertView.h; sourceTree = "<group>"; };
-		DCB5C6D71E6DA31A004C97B5 /* PywBaseAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywBaseAlertView.m; sourceTree = "<group>"; };
+		DCB5C6D61E6DA31A004C97B5 /* PywSelectAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywSelectAlertView.h; sourceTree = "<group>"; };
+		DCB5C6D71E6DA31A004C97B5 /* PywSelectAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywSelectAlertView.m; sourceTree = "<group>"; };
 		DCE5DD9E1E654AD000796094 /* PywAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PywAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE5DDA21E654AD000796094 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCE5DDA41E654AD000796094 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,8 +156,8 @@
 				DC7801B71E6C0D6000F0EB88 /* UIView+Frame.m */,
 				DC7801B91E6C0E4B00F0EB88 /* PywTextSize.h */,
 				DC7801BA1E6C0E4B00F0EB88 /* PywTextSize.m */,
-				DCB5C6D61E6DA31A004C97B5 /* PywBaseAlertView.h */,
-				DCB5C6D71E6DA31A004C97B5 /* PywBaseAlertView.m */,
+				DCB5C6D61E6DA31A004C97B5 /* PywSelectAlertView.h */,
+				DCB5C6D71E6DA31A004C97B5 /* PywSelectAlertView.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -411,7 +411,7 @@
 				DC7801BB1E6C0E4B00F0EB88 /* PywTextSize.m in Sources */,
 				DCE5DDDB1E654B5C00796094 /* Button.m in Sources */,
 				DC99887C1E6DB32A00174B64 /* PywTextField.m in Sources */,
-				DCB5C6D81E6DA31A004C97B5 /* PywBaseAlertView.m in Sources */,
+				DCB5C6D81E6DA31A004C97B5 /* PywSelectAlertView.m in Sources */,
 				DC78019F1E65BCE100F0EB88 /* View+MASAdditions.m in Sources */,
 				DC7801971E65BCE100F0EB88 /* MASCompositeConstraint.m in Sources */,
 				DC78019B1E65BCE100F0EB88 /* MASViewAttribute.m in Sources */,

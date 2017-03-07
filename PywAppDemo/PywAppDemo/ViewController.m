@@ -10,7 +10,7 @@
 #import "Button.h"
 #import "Masonry.h"
 #import "PywAlertSelectView.h"
-#import "PywBaseAlertView.h"
+#import "PywSelectAlertView.h"
 #import "PywLoginView.h"
 
 @interface ViewController ()<PywLoginViewDelegate>
@@ -61,9 +61,10 @@
     loginView.backgroundColor = [UIColor whiteColor];
     loginView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT / 2);
     
-    PywBaseAlertView *baseAlert = [[PywBaseAlertView alloc] initWithContentsSubView:loginView];
+    PywSelectAlertView *baseAlert = [[PywSelectAlertView alloc] initWithContentsSubView:loginView];
     baseAlert.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
-    [baseAlert show];
+    [baseAlert showSelectAlertView];
+    
 }
 
 
