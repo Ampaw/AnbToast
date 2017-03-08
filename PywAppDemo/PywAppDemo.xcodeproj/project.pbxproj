@@ -21,6 +21,9 @@
 		DC7801B51E6C0D1400F0EB88 /* PywAlertSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801B41E6C0D1400F0EB88 /* PywAlertSelectView.m */; };
 		DC7801B81E6C0D6000F0EB88 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801B71E6C0D6000F0EB88 /* UIView+Frame.m */; };
 		DC7801BB1E6C0E4B00F0EB88 /* PywTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801BA1E6C0E4B00F0EB88 /* PywTextSize.m */; };
+		DC8AADF31E704ACA00D72871 /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8AADF21E704ACA00D72871 /* SegmentViewController.m */; };
+		DC8AADF41E704ACA00D72871 /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8AADF21E704ACA00D72871 /* SegmentViewController.m */; };
+		DC8AADF51E704ACA00D72871 /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8AADF21E704ACA00D72871 /* SegmentViewController.m */; };
 		DC9988791E6DB32A00174B64 /* PywLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988751E6DB32A00174B64 /* PywLoginView.m */; };
 		DC99887A1E6DB32A00174B64 /* PywLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988751E6DB32A00174B64 /* PywLoginView.m */; };
 		DC99887B1E6DB32A00174B64 /* PywLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988751E6DB32A00174B64 /* PywLoginView.m */; };
@@ -90,6 +93,8 @@
 		DC7801B71E6C0D6000F0EB88 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		DC7801B91E6C0E4B00F0EB88 /* PywTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywTextSize.h; sourceTree = "<group>"; };
 		DC7801BA1E6C0E4B00F0EB88 /* PywTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywTextSize.m; sourceTree = "<group>"; };
+		DC8AADF11E704ACA00D72871 /* SegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentViewController.h; sourceTree = "<group>"; };
+		DC8AADF21E704ACA00D72871 /* SegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentViewController.m; sourceTree = "<group>"; };
 		DC9988751E6DB32A00174B64 /* PywLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywLoginView.m; sourceTree = "<group>"; };
 		DC9988761E6DB32A00174B64 /* PywTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywTextField.m; sourceTree = "<group>"; };
 		DC9988771E6DB32A00174B64 /* PywLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywLoginView.h; sourceTree = "<group>"; };
@@ -229,6 +234,8 @@
 				DCE5DDAF1E654AD000796094 /* LaunchScreen.storyboard */,
 				DCE5DDB21E654AD000796094 /* Info.plist */,
 				DCE5DDA11E654AD000796094 /* Supporting Files */,
+				DC8AADF11E704ACA00D72871 /* SegmentViewController.h */,
+				DC8AADF21E704ACA00D72871 /* SegmentViewController.m */,
 			);
 			path = PywAppDemo;
 			sourceTree = "<group>";
@@ -413,6 +420,7 @@
 				DC99887C1E6DB32A00174B64 /* PywTextField.m in Sources */,
 				DCB5C6D81E6DA31A004C97B5 /* PywSelectAlertView.m in Sources */,
 				DC78019F1E65BCE100F0EB88 /* View+MASAdditions.m in Sources */,
+				DC8AADF31E704ACA00D72871 /* SegmentViewController.m in Sources */,
 				DC7801971E65BCE100F0EB88 /* MASCompositeConstraint.m in Sources */,
 				DC78019B1E65BCE100F0EB88 /* MASViewAttribute.m in Sources */,
 				DC7801991E65BCE100F0EB88 /* MASConstraintMaker.m in Sources */,
@@ -429,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC8AADF41E704ACA00D72871 /* SegmentViewController.m in Sources */,
 				DC99887D1E6DB32A00174B64 /* PywTextField.m in Sources */,
 				DCE5DDBC1E654AD000796094 /* PywAppDemoTests.m in Sources */,
 				DC99887A1E6DB32A00174B64 /* PywLoginView.m in Sources */,
@@ -439,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC8AADF51E704ACA00D72871 /* SegmentViewController.m in Sources */,
 				DC99887E1E6DB32A00174B64 /* PywTextField.m in Sources */,
 				DCE5DDC71E654AD000796094 /* PywAppDemoUITests.m in Sources */,
 				DC99887B1E6DB32A00174B64 /* PywLoginView.m in Sources */,

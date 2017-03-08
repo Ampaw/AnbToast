@@ -13,10 +13,12 @@
 #import "PywSelectAlertView.h"
 #import "PywLoginView.h"
 #import "UIView+Frame.h"
+#import "SegmentViewController.h"
 
 @interface ViewController ()<PywLoginViewDelegate>
 @property(nonatomic, strong) Button *loginBtn;
 @property(nonatomic, strong) UIView *accountLoginView;
+
 @end
 
 @implementation ViewController
@@ -133,13 +135,16 @@
 //        make.height.mas_equalTo(50);
 //    }];
     
-    PywLoginView *loginView = [[PywLoginView alloc] initWithDelegate:self];
-    loginView.backgroundColor = [UIColor whiteColor];
-    loginView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT / 2);
+//    PywLoginView *loginView = [[PywLoginView alloc] initWithDelegate:self];
+//    loginView.backgroundColor = [UIColor whiteColor];
+//    loginView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT / 2);
+//    
+//    PywSelectAlertView *baseAlert = [[PywSelectAlertView alloc] initWithContentsSubView:loginView];
+//    baseAlert.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+//    [baseAlert showSelectAlertView];
     
-    PywSelectAlertView *baseAlert = [[PywSelectAlertView alloc] initWithContentsSubView:loginView];
-    baseAlert.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
-    [baseAlert showSelectAlertView];
+    SegmentViewController *segmentVC = [[SegmentViewController alloc] init];
+    [self presentViewController:segmentVC animated:YES completion:nil];
     
 }
 
