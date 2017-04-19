@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC11F1B71E9C85670053F3A1 /* PywCustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC11F1B61E9C85670053F3A1 /* PywCustomTextField.m */; };
+		DC11F1B81E9C85670053F3A1 /* PywCustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC11F1B61E9C85670053F3A1 /* PywCustomTextField.m */; };
+		DC11F1B91E9C85670053F3A1 /* PywCustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC11F1B61E9C85670053F3A1 /* PywCustomTextField.m */; };
+		DC29254B1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC29254A1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m */; };
+		DC29254C1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC29254A1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m */; };
+		DC29254D1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC29254A1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m */; };
+		DC2925501EA6FE4E00BA7D7B /* PywOpenChestItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DC29254F1EA6FE4E00BA7D7B /* PywOpenChestItem.m */; };
+		DC2925511EA6FE4E00BA7D7B /* PywOpenChestItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DC29254F1EA6FE4E00BA7D7B /* PywOpenChestItem.m */; };
+		DC2925521EA6FE4E00BA7D7B /* PywOpenChestItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DC29254F1EA6FE4E00BA7D7B /* PywOpenChestItem.m */; };
+		DC2925551EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2925541EA74DD300BA7D7B /* PywOpenChestModel.m */; };
+		DC2925561EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2925541EA74DD300BA7D7B /* PywOpenChestModel.m */; };
+		DC2925571EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2925541EA74DD300BA7D7B /* PywOpenChestModel.m */; };
 		DC78017C1E65BB3100F0EB88 /* PywLoginCeShiView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC78017B1E65BB3100F0EB88 /* PywLoginCeShiView.m */; };
 		DC7801971E65BCE100F0EB88 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = DC78017F1E65BCE100F0EB88 /* MASCompositeConstraint.m */; };
 		DC7801981E65BCE100F0EB88 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801821E65BCE100F0EB88 /* MASConstraint.m */; };
@@ -60,6 +72,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC11F1B51E9C85670053F3A1 /* PywCustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywCustomTextField.h; sourceTree = "<group>"; };
+		DC11F1B61E9C85670053F3A1 /* PywCustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywCustomTextField.m; sourceTree = "<group>"; };
+		DC2925491EA6FBAD00BA7D7B /* PywOpenChestAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywOpenChestAlertView.h; sourceTree = "<group>"; };
+		DC29254A1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywOpenChestAlertView.m; sourceTree = "<group>"; };
+		DC29254E1EA6FE4E00BA7D7B /* PywOpenChestItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywOpenChestItem.h; sourceTree = "<group>"; };
+		DC29254F1EA6FE4E00BA7D7B /* PywOpenChestItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywOpenChestItem.m; sourceTree = "<group>"; };
+		DC2925531EA74DD300BA7D7B /* PywOpenChestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywOpenChestModel.h; sourceTree = "<group>"; };
+		DC2925541EA74DD300BA7D7B /* PywOpenChestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywOpenChestModel.m; sourceTree = "<group>"; };
 		DC78017A1E65BB3100F0EB88 /* PywLoginCeShiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywLoginCeShiView.h; sourceTree = "<group>"; };
 		DC78017B1E65BB3100F0EB88 /* PywLoginCeShiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywLoginCeShiView.m; sourceTree = "<group>"; };
 		DC78017E1E65BCE100F0EB88 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -236,6 +256,14 @@
 				DCE5DDA11E654AD000796094 /* Supporting Files */,
 				DC8AADF11E704ACA00D72871 /* SegmentViewController.h */,
 				DC8AADF21E704ACA00D72871 /* SegmentViewController.m */,
+				DC11F1B51E9C85670053F3A1 /* PywCustomTextField.h */,
+				DC11F1B61E9C85670053F3A1 /* PywCustomTextField.m */,
+				DC2925491EA6FBAD00BA7D7B /* PywOpenChestAlertView.h */,
+				DC29254A1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m */,
+				DC29254E1EA6FE4E00BA7D7B /* PywOpenChestItem.h */,
+				DC29254F1EA6FE4E00BA7D7B /* PywOpenChestItem.m */,
+				DC2925531EA74DD300BA7D7B /* PywOpenChestModel.h */,
+				DC2925541EA74DD300BA7D7B /* PywOpenChestModel.m */,
 			);
 			path = PywAppDemo;
 			sourceTree = "<group>";
@@ -342,6 +370,7 @@
 				TargetAttributes = {
 					DCE5DD9D1E654AD000796094 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 84K92AJVXZ;
 						ProvisioningStyle = Automatic;
 					};
 					DCE5DDB61E654AD000796094 = {
@@ -423,12 +452,16 @@
 				DC8AADF31E704ACA00D72871 /* SegmentViewController.m in Sources */,
 				DC7801971E65BCE100F0EB88 /* MASCompositeConstraint.m in Sources */,
 				DC78019B1E65BCE100F0EB88 /* MASViewAttribute.m in Sources */,
+				DC11F1B71E9C85670053F3A1 /* PywCustomTextField.m in Sources */,
 				DC7801991E65BCE100F0EB88 /* MASConstraintMaker.m in Sources */,
 				DC78019D1E65BCE100F0EB88 /* NSArray+MASAdditions.m in Sources */,
+				DC2925551EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */,
 				DC7801A01E65BCE100F0EB88 /* ViewController+MASAdditions.m in Sources */,
 				DC7801981E65BCE100F0EB88 /* MASConstraint.m in Sources */,
 				DC7801B81E6C0D6000F0EB88 /* UIView+Frame.m in Sources */,
 				DC78019A1E65BCE100F0EB88 /* MASLayoutConstraint.m in Sources */,
+				DC29254B1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m in Sources */,
+				DC2925501EA6FE4E00BA7D7B /* PywOpenChestItem.m in Sources */,
 				DCE5DDA31E654AD000796094 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,9 +470,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2925561EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */,
+				DC11F1B81E9C85670053F3A1 /* PywCustomTextField.m in Sources */,
 				DC8AADF41E704ACA00D72871 /* SegmentViewController.m in Sources */,
+				DC2925511EA6FE4E00BA7D7B /* PywOpenChestItem.m in Sources */,
 				DC99887D1E6DB32A00174B64 /* PywTextField.m in Sources */,
 				DCE5DDBC1E654AD000796094 /* PywAppDemoTests.m in Sources */,
+				DC29254C1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m in Sources */,
 				DC99887A1E6DB32A00174B64 /* PywLoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,9 +485,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2925571EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */,
+				DC11F1B91E9C85670053F3A1 /* PywCustomTextField.m in Sources */,
 				DC8AADF51E704ACA00D72871 /* SegmentViewController.m in Sources */,
+				DC2925521EA6FE4E00BA7D7B /* PywOpenChestItem.m in Sources */,
 				DC99887E1E6DB32A00174B64 /* PywTextField.m in Sources */,
 				DCE5DDC71E654AD000796094 /* PywAppDemoUITests.m in Sources */,
+				DC29254D1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m in Sources */,
 				DC99887B1E6DB32A00174B64 /* PywLoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,6 +625,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84K92AJVXZ;
 				INFOPLIST_FILE = PywAppDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -596,6 +638,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84K92AJVXZ;
 				INFOPLIST_FILE = PywAppDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

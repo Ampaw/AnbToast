@@ -14,6 +14,10 @@
 #import "PywLoginView.h"
 #import "UIView+Frame.h"
 #import "SegmentViewController.h"
+#import "PywCustomTextField.h"
+
+#import "PywOpenChestItem.h"
+#import "PywOpenChestAlertView.h"
 
 @interface ViewController ()<PywLoginViewDelegate>
 @property(nonatomic, strong) Button *loginBtn;
@@ -36,39 +40,62 @@
     [self.view addSubview:loginBtn];
     self.loginBtn = loginBtn;
     
+    UIImageView *leftView = [[UIImageView alloc] init];
+    leftView.image = [UIImage imageNamed:@"tabbar_discover"];
     
-    UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:@[@"账号登录", @"验证码登录"]];
-    segment.frame = CGRectMake(50, 160, 300, 40);
-    segment.selectedSegmentIndex = 0;//设置默认选择项索引
-    segment.layer.cornerRadius = 20;
-    segment.backgroundColor = [UIColor lightGrayColor];
-    segment.tintColor = [UIColor whiteColor];
-    segment.layer.masksToBounds = YES;
-    segment.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    segment.layer.borderWidth = 1.f;
-    NSDictionary* selectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],
-                                             NSForegroundColorAttributeName: [UIColor orangeColor]};
-    [segment setTitleTextAttributes:selectedTextAttributes forState:UIControlStateSelected];//设置文字属性
-    NSDictionary* unselectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],
-                                               NSForegroundColorAttributeName: [UIColor blackColor]};
-    [segment setTitleTextAttributes:unselectedTextAttributes forState:UIControlStateNormal];
+    UIView *rightView = [[UIView alloc] init];
     
-    [segment setBackgroundImage:[self imageWithColor:[UIColor lightGrayColor]] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [segment setBackgroundImage:[self imageWithColor:[UIColor whiteColor]] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    UIView *v_line = [[UIView alloc] initWithFrame:CGRectMake(0, (44 - (44 * 0.6)) * 0.5, 1, (44 * 0.6))];
+    v_line.backgroundColor = [UIColor lightGrayColor];
+    [rightView addSubview:v_line];
     
-    segment.apportionsSegmentWidthsByContent = NO; //是否根据内容的大小自动调整宽度
-    [segment addTarget:self action:@selector(segment:) forControlEvents:UIControlEventValueChanged];
-    [self.view addSubview:segment];
+    UIButton *getCodeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    getCodeBtn.frame = CGRectMake(CGRectGetMaxX(v_line.frame), 0, 99, 44);
+    getCodeBtn.backgroundColor = [UIColor orangeColor];
+    getCodeBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [getCodeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [getCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+    [rightView addSubview:getCodeBtn];
     
-    [self.view addSubview:self.accountLoginView];
+    PywCustomTextField *textField = [[PywCustomTextField alloc] initWithLeftView:leftView
+                                                                       rightView:nil
+                                                                  rightViewWidth:0
+                                                                 textFieldHeight:44];
+    textField.frame = CGRectMake(50, 160, 320, 44);
+    [self.view addSubview:textField];
     
-    __weak typeof(self) wSelf = self;
-    [self.accountLoginView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.offset(20);
-        make.left.equalTo(wSelf.view.mas_left);
-        make.width.mas_equalTo(2 * SCREENWIDTH);
-        make.height.mas_equalTo(50);
-    }];
+//    UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:@[@"账号登录", @"验证码登录"]];
+//    segment.frame = CGRectMake(50, 160, 300, 40);
+//    segment.selectedSegmentIndex = 0;//设置默认选择项索引
+//    segment.layer.cornerRadius = 20;
+//    segment.backgroundColor = [UIColor lightGrayColor];
+//    segment.tintColor = [UIColor whiteColor];
+//    segment.layer.masksToBounds = YES;
+//    segment.layer.borderColor = [UIColor lightGrayColor].CGColor;
+//    segment.layer.borderWidth = 1.f;
+//    NSDictionary* selectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],
+//                                             NSForegroundColorAttributeName: [UIColor orangeColor]};
+//    [segment setTitleTextAttributes:selectedTextAttributes forState:UIControlStateSelected];//设置文字属性
+//    NSDictionary* unselectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],
+//                                               NSForegroundColorAttributeName: [UIColor blackColor]};
+//    [segment setTitleTextAttributes:unselectedTextAttributes forState:UIControlStateNormal];
+//    
+//    [segment setBackgroundImage:[self imageWithColor:[UIColor lightGrayColor]] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//    [segment setBackgroundImage:[self imageWithColor:[UIColor whiteColor]] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+//    
+//    segment.apportionsSegmentWidthsByContent = NO; //是否根据内容的大小自动调整宽度
+//    [segment addTarget:self action:@selector(segment:) forControlEvents:UIControlEventValueChanged];
+//    [self.view addSubview:segment];
+//    
+//    [self.view addSubview:self.accountLoginView];
+//    
+//    __weak typeof(self) wSelf = self;
+//    [self.accountLoginView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.offset(20);
+//        make.left.equalTo(wSelf.view.mas_left);
+//        make.width.mas_equalTo(2 * SCREENWIDTH);
+//        make.height.mas_equalTo(50);
+//    }];
 }
 //  颜色转换为背景图片
 - (UIImage *)imageWithColor:(UIColor *)color {
@@ -143,9 +170,14 @@
 //    baseAlert.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
 //    [baseAlert showSelectAlertView];
     
-    SegmentViewController *segmentVC = [[SegmentViewController alloc] init];
-    [self presentViewController:segmentVC animated:YES completion:nil];
+//    SegmentViewController *segmentVC = [[SegmentViewController alloc] init];
+//    [self presentViewController:segmentVC animated:YES completion:nil];
     
+    
+    PywOpenChestAlertView *openAlertView = [[PywOpenChestAlertView alloc] initWithChestMsg:@"开宝箱一句话说明" chestOffsetCost:@"0.09" isOpenChest:NO target:self completion:^(BOOL is_open_chest, NSString *chest_money, typeof(self) target) {
+        NSLog(@"\n**** is_open_chest = %d ****\n**** chest_money = %@ ****\n**** target = %@ ****\n",is_open_chest,chest_money,target);
+    }];
+    [openAlertView show];
 }
 
 - (UIView *)accountLoginView
