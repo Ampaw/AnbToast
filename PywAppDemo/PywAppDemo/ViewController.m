@@ -174,7 +174,7 @@
 //    [self presentViewController:segmentVC animated:YES completion:nil];
     
     
-    PywOpenChestAlertView *openAlertView = [[PywOpenChestAlertView alloc] initWithChestMsg:@"开宝箱一句话说明" chestOffsetCost:@"0.09" isOpenChest:NO target:self completion:^(BOOL is_open_chest, NSString *chest_money, typeof(self) target) {
+    PywOpenChestAlertView *openAlertView = [[PywOpenChestAlertView alloc] initWithChestMsg:@"开宝箱一句话说明" chestOffsetCost:@"0.09" isOpenChest:YES target:self completion:^(BOOL is_open_chest, NSString *chest_money, typeof(self) target) {
         NSLog(@"\n**** is_open_chest = %d ****\n**** chest_money = %@ ****\n**** target = %@ ****\n",is_open_chest,chest_money,target);
     }];
     [openAlertView show];

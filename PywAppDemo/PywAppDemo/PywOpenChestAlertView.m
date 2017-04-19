@@ -50,7 +50,7 @@ CGFloat const isOpenChest_Height     = 370; // 打开宝箱后高度
         self.is_open_chest = is_open_chest;
         self.completion = completion;
         
-        [self setUpModelContents];
+        [self setUpModelContents:is_open_chest];
         [self setUpSubView];
         [self updateSubViewConstraints];
     }
@@ -148,18 +148,20 @@ CGFloat const isOpenChest_Height     = 370; // 打开宝箱后高度
 /**
  设置Model数组的值
  */
-- (void)setUpModelContents
+- (void)setUpModelContents:(BOOL)is_open_chest
 {
     // 设置虚拟宝箱金额
     int cost_money = self.chest_offset_cost * 100;
     for (NSInteger i = 1; i <= 4; i++) {
         PywOpenChestModel *chestModel = [[PywOpenChestModel alloc] init];
         chestModel.chest_money = [NSString stringWithFormat:@"%.2f",[self getRandomNumber:1 to:cost_money] / 100];
+        chestModel.is_open_chest = is_open_chest;
         [self.modelArr addObject:chestModel];
     }
     // 设置固定宝箱金额
     PywOpenChestModel *chestModel = [[PywOpenChestModel alloc] init];
     chestModel.chest_money = [NSString stringWithFormat:@"%.2f",self.chest_offset_cost];
+    chestModel.is_open_chest = is_open_chest;
     NSInteger index = [self getRandomNumber:0 to:4];
     [self.modelArr insertObject:chestModel atIndex:index];
 }
@@ -212,9 +214,7 @@ CGFloat const isOpenChest_Height     = 370; // 打开宝箱后高度
     }
     
     // 宝箱打开后，使用按钮的显示
-    int index = [self getMaxIndexWithMaxNumber:self.chest_offset_cost];
-    PywOpenChestModel *model = self.modelArr[index];
-    NSString *applyChestMoney = [NSString stringWithFormat:@"使用￥%@优惠",model.chest_money];
+    NSString *applyChestMoney = [NSString stringWithFormat:@"使用￥%@优惠",self.chest_money];
     [self.applyButton setTitle:applyChestMoney forState:UIControlStateNormal];
 }
 
@@ -223,13 +223,23 @@ CGFloat const isOpenChest_Height     = 370; // 打开宝箱后高度
  */
 - (void)normalSelectOpenChestMaxMoney:(PywOpenChestItem *)openChestItem
 {
-    int index = [self getMaxIndexWithMaxNumber:self.chest_offset_cost]; // 最大金额下标
-    if (openChestItem.openChestButton.tag == (index + 1)) {
-        openChestItem.openChestButton.layer.borderWidth = 1.f;
-        openChestItem.openChestButton.layer.borderColor = UIColorFromRGB(0xFFB22D).CGColor;
-    }else{
-        openChestItem.openChestButton.layer.borderWidth = 1.f;
-        openChestItem.openChestButton.layer.borderColor = UIColorFromRGB(0xCFCFCF).CGColor;
+    [self.tagArr setArray:@[@"1",@"2",@"3",@"4",@"5"]];
+    // 遍历tag数组，显示最大金额的Item
+    for (NSNumber *tag in self.tagArr) {
+        PywOpenChestItem *item_ =  [self.openChestItemView viewWithTag:[tag integerValue]];
+        NSInteger index = [self getMaxIndexWithMaxNumber:self.chest_offset_cost]; // 最大金额下标
+        if ([tag integerValue] == index + 1) {
+            item_.openChestButton.layer.borderWidth = 1.f;
+            item_.openChestButton.layer.borderColor = UIColorFromRGB(0xFFB22D).CGColor;
+            
+            PywOpenChestModel *model = self.modelArr[index];
+            self.chest_money = model.chest_money;
+            NSString *applyChestMoney = [NSString stringWithFormat:@"使用￥%@优惠",self.chest_money];
+            [self.applyButton setTitle:applyChestMoney forState:UIControlStateNormal];
+        }else{
+            item_.openChestButton.layer.borderWidth = 1.f;
+            item_.openChestButton.layer.borderColor = UIColorFromRGB(0xCFCFCF).CGColor;
+        }
     }
 }
 
@@ -249,6 +259,8 @@ CGFloat const isOpenChest_Height     = 370; // 打开宝箱后高度
         item.openChestButton.layer.borderWidth = 1.f;
         item.openChestButton.layer.borderColor = UIColorFromRGB(0xFFB22D).CGColor;
         self.chest_money = chest_model.chest_money;
+        NSString *applyChestMoney = [NSString stringWithFormat:@"使用￥%@优惠",self.chest_money];
+        [self.applyButton setTitle:applyChestMoney forState:UIControlStateNormal];
     }else{
         item.openChestButton.layer.borderWidth = 1.f;
         item.openChestButton.layer.borderColor = UIColorFromRGB(0xCFCFCF).CGColor;
@@ -266,10 +278,6 @@ CGFloat const isOpenChest_Height     = 370; // 打开宝箱后高度
         [self.tagArr addObject:[NSNumber numberWithInteger:tag]];
         
         if (self.count >= self.modelArr.count) {
-            // 设置是否完全打开状态,
-            self.is_open_chest = YES;
-            [self isOpenChest:self.is_open_chest];
-            
             // 遍历tag数组，显示最大金额的Item
             for (NSNumber *tag in self.tagArr) {
                 PywOpenChestItem *item_ =  [self.openChestItemView viewWithTag:[tag integerValue]];
@@ -280,11 +288,17 @@ CGFloat const isOpenChest_Height     = 370; // 打开宝箱后高度
                     
                     PywOpenChestModel *model = self.modelArr[index];
                     self.chest_money = model.chest_money;
+                    NSString *applyChestMoney = [NSString stringWithFormat:@"使用￥%@优惠",self.chest_money];
+                    [self.applyButton setTitle:applyChestMoney forState:UIControlStateNormal];
                 }else{
                     item_.openChestButton.layer.borderWidth = 1.f;
                     item_.openChestButton.layer.borderColor = UIColorFromRGB(0xCFCFCF).CGColor;
                 }
             }
+            
+            // 设置是否完全打开状态,
+            self.is_open_chest = YES;
+            [self isOpenChest:self.is_open_chest];
             
             // 回调数据
             if (self.completion) {
