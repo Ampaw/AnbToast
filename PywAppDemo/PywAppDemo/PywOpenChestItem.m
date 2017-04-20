@@ -28,6 +28,10 @@
     [self addSubview:self.openChestImgView];
     [self addSubview:self.openChestButton];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openChestTap:)];
+    self.openChestImgView.userInteractionEnabled = YES;
+    [self.openChestImgView addGestureRecognizer:tap];
+    
     [self.openChestButton addTarget:self action:@selector(openChestButton:) forControlEvents:UIControlEventTouchUpInside];
 }
 - (void)updateSubViewConstraints
@@ -46,6 +50,12 @@
     }];
 }
 - (void)openChestButton:(UIButton *)button
+{
+    if ([self.delegate respondsToSelector:@selector(openChestItem:buttonTag:)]) {
+        [self.delegate openChestItem:self buttonTag:self.tag];
+    }
+}
+- (void)openChestTap:(UITapGestureRecognizer *)tap
 {
     if ([self.delegate respondsToSelector:@selector(openChestItem:buttonTag:)]) {
         [self.delegate openChestItem:self buttonTag:self.tag];

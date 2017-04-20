@@ -299,11 +299,6 @@ CGFloat const isOpenChest_Height     = 370; // 打开宝箱后高度
             // 设置是否完全打开状态,
             self.is_open_chest = YES;
             [self isOpenChest:self.is_open_chest];
-            
-            // 回调数据
-            if (self.completion) {
-                self.completion(self.is_open_chest, self.chest_money,self.target);
-            }
         }
     }
 }
@@ -327,7 +322,11 @@ CGFloat const isOpenChest_Height     = 370; // 打开宝箱后高度
 - (void)applyButton:(UIButton *)btn
 {
     [self hide];
-    NSLog(@"chest_money = %@",self.chest_money);
+    
+    // 回调数据
+    if (self.completion) {
+        self.completion(self.is_open_chest, self.chest_money, self.target);
+    }
 }
 
 #pragma mark - Public

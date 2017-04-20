@@ -22,7 +22,9 @@
 @interface ViewController ()<PywLoginViewDelegate>
 @property(nonatomic, strong) Button *loginBtn;
 @property(nonatomic, strong) UIView *accountLoginView;
+@property(nonatomic, strong) UILabel *praceLabel;
 
+@property(nonatomic, assign) BOOL is_open_chest;
 @end
 
 @implementation ViewController
@@ -40,29 +42,35 @@
     [self.view addSubview:loginBtn];
     self.loginBtn = loginBtn;
     
-    UIImageView *leftView = [[UIImageView alloc] init];
-    leftView.image = [UIImage imageNamed:@"tabbar_discover"];
+    _praceLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 160, 100, 30)];
+    _praceLabel.layer.borderColor = [UIColor blackColor].CGColor;
+    _praceLabel.layer.borderWidth = 1.f;
+    _praceLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:_praceLabel];
     
-    UIView *rightView = [[UIView alloc] init];
-    
-    UIView *v_line = [[UIView alloc] initWithFrame:CGRectMake(0, (44 - (44 * 0.6)) * 0.5, 1, (44 * 0.6))];
-    v_line.backgroundColor = [UIColor lightGrayColor];
-    [rightView addSubview:v_line];
-    
-    UIButton *getCodeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    getCodeBtn.frame = CGRectMake(CGRectGetMaxX(v_line.frame), 0, 99, 44);
-    getCodeBtn.backgroundColor = [UIColor orangeColor];
-    getCodeBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-    [getCodeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [getCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
-    [rightView addSubview:getCodeBtn];
-    
-    PywCustomTextField *textField = [[PywCustomTextField alloc] initWithLeftView:leftView
-                                                                       rightView:nil
-                                                                  rightViewWidth:0
-                                                                 textFieldHeight:44];
-    textField.frame = CGRectMake(50, 160, 320, 44);
-    [self.view addSubview:textField];
+//    UIImageView *leftView = [[UIImageView alloc] init];
+//    leftView.image = [UIImage imageNamed:@"tabbar_discover"];
+//    
+//    UIView *rightView = [[UIView alloc] init];
+//    
+//    UIView *v_line = [[UIView alloc] initWithFrame:CGRectMake(0, (44 - (44 * 0.6)) * 0.5, 1, (44 * 0.6))];
+//    v_line.backgroundColor = [UIColor lightGrayColor];
+//    [rightView addSubview:v_line];
+//    
+//    UIButton *getCodeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    getCodeBtn.frame = CGRectMake(CGRectGetMaxX(v_line.frame), 0, 99, 44);
+//    getCodeBtn.backgroundColor = [UIColor orangeColor];
+//    getCodeBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+//    [getCodeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [getCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+//    [rightView addSubview:getCodeBtn];
+//    
+//    PywCustomTextField *textField = [[PywCustomTextField alloc] initWithLeftView:leftView
+//                                                                       rightView:nil
+//                                                                  rightViewWidth:0
+//                                                                 textFieldHeight:44];
+//    textField.frame = CGRectMake(50, 160, 320, 44);
+//    [self.view addSubview:textField];
     
 //    UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:@[@"账号登录", @"验证码登录"]];
 //    segment.frame = CGRectMake(50, 160, 300, 40);
@@ -174,7 +182,10 @@
 //    [self presentViewController:segmentVC animated:YES completion:nil];
     
     
-    PywOpenChestAlertView *openAlertView = [[PywOpenChestAlertView alloc] initWithChestMsg:@"开宝箱一句话说明" chestOffsetCost:@"0.09" isOpenChest:YES target:self completion:^(BOOL is_open_chest, NSString *chest_money, typeof(self) target) {
+    PywOpenChestAlertView *openAlertView = [[PywOpenChestAlertView alloc] initWithChestMsg:@"开宝箱一句话说明" chestOffsetCost:@"0.09" isOpenChest:self.is_open_chest target:self completion:^(BOOL is_open_chest, NSString *chest_money, typeof(self) target) {
+        target.is_open_chest = is_open_chest;
+        target.praceLabel.text = chest_money;
+        
         NSLog(@"\n**** is_open_chest = %d ****\n**** chest_money = %@ ****\n**** target = %@ ****\n",is_open_chest,chest_money,target);
     }];
     [openAlertView show];
