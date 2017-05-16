@@ -19,6 +19,7 @@
 		DC2925551EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2925541EA74DD300BA7D7B /* PywOpenChestModel.m */; };
 		DC2925561EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2925541EA74DD300BA7D7B /* PywOpenChestModel.m */; };
 		DC2925571EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2925541EA74DD300BA7D7B /* PywOpenChestModel.m */; };
+		DC73AC5E1EB1DEA8004CB8E6 /* libMobileGestalt.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC73AC5D1EB1DEA8004CB8E6 /* libMobileGestalt.tbd */; };
 		DC78017C1E65BB3100F0EB88 /* PywLoginCeShiView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC78017B1E65BB3100F0EB88 /* PywLoginCeShiView.m */; };
 		DC7801971E65BCE100F0EB88 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = DC78017F1E65BCE100F0EB88 /* MASCompositeConstraint.m */; };
 		DC7801981E65BCE100F0EB88 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801821E65BCE100F0EB88 /* MASConstraint.m */; };
@@ -43,6 +44,61 @@
 		DC99887D1E6DB32A00174B64 /* PywTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988761E6DB32A00174B64 /* PywTextField.m */; };
 		DC99887E1E6DB32A00174B64 /* PywTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9988761E6DB32A00174B64 /* PywTextField.m */; };
 		DCB5C6D81E6DA31A004C97B5 /* PywSelectAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB5C6D71E6DA31A004C97B5 /* PywSelectAlertView.m */; };
+		DCD2E0CE1EB18384008AB5A4 /* toast_error.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0BC1EB18384008AB5A4 /* toast_error.png */; };
+		DCD2E0CF1EB18384008AB5A4 /* toast_error.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0BC1EB18384008AB5A4 /* toast_error.png */; };
+		DCD2E0D01EB18384008AB5A4 /* toast_error.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0BC1EB18384008AB5A4 /* toast_error.png */; };
+		DCD2E0D11EB18384008AB5A4 /* toast_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0BD1EB18384008AB5A4 /* toast_error@2x.png */; };
+		DCD2E0D21EB18384008AB5A4 /* toast_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0BD1EB18384008AB5A4 /* toast_error@2x.png */; };
+		DCD2E0D31EB18384008AB5A4 /* toast_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0BD1EB18384008AB5A4 /* toast_error@2x.png */; };
+		DCD2E0D41EB18384008AB5A4 /* toast_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0BE1EB18384008AB5A4 /* toast_error@3x.png */; };
+		DCD2E0D51EB18384008AB5A4 /* toast_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0BE1EB18384008AB5A4 /* toast_error@3x.png */; };
+		DCD2E0D61EB18384008AB5A4 /* toast_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0BE1EB18384008AB5A4 /* toast_error@3x.png */; };
+		DCD2E0D71EB18384008AB5A4 /* toast_info.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0BF1EB18384008AB5A4 /* toast_info.png */; };
+		DCD2E0D81EB18384008AB5A4 /* toast_info.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0BF1EB18384008AB5A4 /* toast_info.png */; };
+		DCD2E0D91EB18384008AB5A4 /* toast_info.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0BF1EB18384008AB5A4 /* toast_info.png */; };
+		DCD2E0DA1EB18384008AB5A4 /* toast_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C01EB18384008AB5A4 /* toast_info@2x.png */; };
+		DCD2E0DB1EB18384008AB5A4 /* toast_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C01EB18384008AB5A4 /* toast_info@2x.png */; };
+		DCD2E0DC1EB18384008AB5A4 /* toast_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C01EB18384008AB5A4 /* toast_info@2x.png */; };
+		DCD2E0DD1EB18384008AB5A4 /* toast_info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C11EB18384008AB5A4 /* toast_info@3x.png */; };
+		DCD2E0DE1EB18384008AB5A4 /* toast_info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C11EB18384008AB5A4 /* toast_info@3x.png */; };
+		DCD2E0DF1EB18384008AB5A4 /* toast_info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C11EB18384008AB5A4 /* toast_info@3x.png */; };
+		DCD2E0E01EB18384008AB5A4 /* toast_success.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C21EB18384008AB5A4 /* toast_success.png */; };
+		DCD2E0E11EB18384008AB5A4 /* toast_success.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C21EB18384008AB5A4 /* toast_success.png */; };
+		DCD2E0E21EB18384008AB5A4 /* toast_success.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C21EB18384008AB5A4 /* toast_success.png */; };
+		DCD2E0E31EB18384008AB5A4 /* toast_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C31EB18384008AB5A4 /* toast_success@2x.png */; };
+		DCD2E0E41EB18384008AB5A4 /* toast_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C31EB18384008AB5A4 /* toast_success@2x.png */; };
+		DCD2E0E51EB18384008AB5A4 /* toast_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C31EB18384008AB5A4 /* toast_success@2x.png */; };
+		DCD2E0E61EB18384008AB5A4 /* toast_success@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C41EB18384008AB5A4 /* toast_success@3x.png */; };
+		DCD2E0E71EB18384008AB5A4 /* toast_success@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C41EB18384008AB5A4 /* toast_success@3x.png */; };
+		DCD2E0E81EB18384008AB5A4 /* toast_success@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C41EB18384008AB5A4 /* toast_success@3x.png */; };
+		DCD2E0E91EB18384008AB5A4 /* toast_warning.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C51EB18384008AB5A4 /* toast_warning.png */; };
+		DCD2E0EA1EB18384008AB5A4 /* toast_warning.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C51EB18384008AB5A4 /* toast_warning.png */; };
+		DCD2E0EB1EB18384008AB5A4 /* toast_warning.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C51EB18384008AB5A4 /* toast_warning.png */; };
+		DCD2E0EC1EB18384008AB5A4 /* toast_warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C61EB18384008AB5A4 /* toast_warning@2x.png */; };
+		DCD2E0ED1EB18384008AB5A4 /* toast_warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C61EB18384008AB5A4 /* toast_warning@2x.png */; };
+		DCD2E0EE1EB18384008AB5A4 /* toast_warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C61EB18384008AB5A4 /* toast_warning@2x.png */; };
+		DCD2E0EF1EB18384008AB5A4 /* toast_warning@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C71EB18384008AB5A4 /* toast_warning@3x.png */; };
+		DCD2E0F01EB18384008AB5A4 /* toast_warning@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C71EB18384008AB5A4 /* toast_warning@3x.png */; };
+		DCD2E0F11EB18384008AB5A4 /* toast_warning@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD2E0C71EB18384008AB5A4 /* toast_warning@3x.png */; };
+		DCD2E0F21EB18384008AB5A4 /* PywHUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E0C91EB18384008AB5A4 /* PywHUDManager.m */; };
+		DCD2E0F31EB18384008AB5A4 /* PywHUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E0C91EB18384008AB5A4 /* PywHUDManager.m */; };
+		DCD2E0F41EB18384008AB5A4 /* PywHUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E0C91EB18384008AB5A4 /* PywHUDManager.m */; };
+		DCD2E0F51EB18384008AB5A4 /* PywProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E0CB1EB18384008AB5A4 /* PywProgressHUD.m */; };
+		DCD2E0F61EB18384008AB5A4 /* PywProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E0CB1EB18384008AB5A4 /* PywProgressHUD.m */; };
+		DCD2E0F71EB18384008AB5A4 /* PywProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E0CB1EB18384008AB5A4 /* PywProgressHUD.m */; };
+		DCD2E0F81EB18384008AB5A4 /* PywToast.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E0CD1EB18384008AB5A4 /* PywToast.m */; };
+		DCD2E0F91EB18384008AB5A4 /* PywToast.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E0CD1EB18384008AB5A4 /* PywToast.m */; };
+		DCD2E0FA1EB18384008AB5A4 /* PywToast.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E0CD1EB18384008AB5A4 /* PywToast.m */; };
+		DCD2E0FE1EB18402008AB5A4 /* GetDeviceInfoTools.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E0FD1EB18402008AB5A4 /* GetDeviceInfoTools.m */; };
+		DCD2E0FF1EB18402008AB5A4 /* GetDeviceInfoTools.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E0FD1EB18402008AB5A4 /* GetDeviceInfoTools.m */; };
+		DCD2E1001EB18402008AB5A4 /* GetDeviceInfoTools.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E0FD1EB18402008AB5A4 /* GetDeviceInfoTools.m */; };
+		DCD2E1031EB190C9008AB5A4 /* PywKeyChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E1021EB190C9008AB5A4 /* PywKeyChainManager.m */; };
+		DCD2E1041EB190C9008AB5A4 /* PywKeyChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E1021EB190C9008AB5A4 /* PywKeyChainManager.m */; };
+		DCD2E1051EB190C9008AB5A4 /* PywKeyChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E1021EB190C9008AB5A4 /* PywKeyChainManager.m */; };
+		DCD2E1081EB190E4008AB5A4 /* PywUUIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E1071EB190E4008AB5A4 /* PywUUIDManager.m */; };
+		DCD2E1091EB190E4008AB5A4 /* PywUUIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E1071EB190E4008AB5A4 /* PywUUIDManager.m */; };
+		DCD2E10A1EB190E4008AB5A4 /* PywUUIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2E1071EB190E4008AB5A4 /* PywUUIDManager.m */; };
+		DCD2E10D1EB1A40D008AB5A4 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD2E10C1EB1A40D008AB5A4 /* CoreTelephony.framework */; };
 		DCE5DDA31E654AD000796094 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE5DDA21E654AD000796094 /* main.m */; };
 		DCE5DDA61E654AD000796094 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE5DDA51E654AD000796094 /* AppDelegate.m */; };
 		DCE5DDA91E654AD000796094 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE5DDA81E654AD000796094 /* ViewController.m */; };
@@ -80,6 +136,7 @@
 		DC29254F1EA6FE4E00BA7D7B /* PywOpenChestItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywOpenChestItem.m; sourceTree = "<group>"; };
 		DC2925531EA74DD300BA7D7B /* PywOpenChestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywOpenChestModel.h; sourceTree = "<group>"; };
 		DC2925541EA74DD300BA7D7B /* PywOpenChestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywOpenChestModel.m; sourceTree = "<group>"; };
+		DC73AC5D1EB1DEA8004CB8E6 /* libMobileGestalt.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMobileGestalt.tbd; path = usr/lib/libMobileGestalt.tbd; sourceTree = SDKROOT; };
 		DC78017A1E65BB3100F0EB88 /* PywLoginCeShiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywLoginCeShiView.h; sourceTree = "<group>"; };
 		DC78017B1E65BB3100F0EB88 /* PywLoginCeShiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywLoginCeShiView.m; sourceTree = "<group>"; };
 		DC78017E1E65BCE100F0EB88 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -121,6 +178,31 @@
 		DC9988781E6DB32A00174B64 /* PywTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywTextField.h; sourceTree = "<group>"; };
 		DCB5C6D61E6DA31A004C97B5 /* PywSelectAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywSelectAlertView.h; sourceTree = "<group>"; };
 		DCB5C6D71E6DA31A004C97B5 /* PywSelectAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywSelectAlertView.m; sourceTree = "<group>"; };
+		DCD2E0BC1EB18384008AB5A4 /* toast_error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toast_error.png; sourceTree = "<group>"; };
+		DCD2E0BD1EB18384008AB5A4 /* toast_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_error@2x.png"; sourceTree = "<group>"; };
+		DCD2E0BE1EB18384008AB5A4 /* toast_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_error@3x.png"; sourceTree = "<group>"; };
+		DCD2E0BF1EB18384008AB5A4 /* toast_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toast_info.png; sourceTree = "<group>"; };
+		DCD2E0C01EB18384008AB5A4 /* toast_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_info@2x.png"; sourceTree = "<group>"; };
+		DCD2E0C11EB18384008AB5A4 /* toast_info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_info@3x.png"; sourceTree = "<group>"; };
+		DCD2E0C21EB18384008AB5A4 /* toast_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toast_success.png; sourceTree = "<group>"; };
+		DCD2E0C31EB18384008AB5A4 /* toast_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_success@2x.png"; sourceTree = "<group>"; };
+		DCD2E0C41EB18384008AB5A4 /* toast_success@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_success@3x.png"; sourceTree = "<group>"; };
+		DCD2E0C51EB18384008AB5A4 /* toast_warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toast_warning.png; sourceTree = "<group>"; };
+		DCD2E0C61EB18384008AB5A4 /* toast_warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_warning@2x.png"; sourceTree = "<group>"; };
+		DCD2E0C71EB18384008AB5A4 /* toast_warning@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_warning@3x.png"; sourceTree = "<group>"; };
+		DCD2E0C81EB18384008AB5A4 /* PywHUDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywHUDManager.h; sourceTree = "<group>"; };
+		DCD2E0C91EB18384008AB5A4 /* PywHUDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywHUDManager.m; sourceTree = "<group>"; };
+		DCD2E0CA1EB18384008AB5A4 /* PywProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywProgressHUD.h; sourceTree = "<group>"; };
+		DCD2E0CB1EB18384008AB5A4 /* PywProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywProgressHUD.m; sourceTree = "<group>"; };
+		DCD2E0CC1EB18384008AB5A4 /* PywToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywToast.h; sourceTree = "<group>"; };
+		DCD2E0CD1EB18384008AB5A4 /* PywToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywToast.m; sourceTree = "<group>"; };
+		DCD2E0FC1EB18402008AB5A4 /* GetDeviceInfoTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetDeviceInfoTools.h; sourceTree = "<group>"; };
+		DCD2E0FD1EB18402008AB5A4 /* GetDeviceInfoTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetDeviceInfoTools.m; sourceTree = "<group>"; };
+		DCD2E1011EB190C9008AB5A4 /* PywKeyChainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywKeyChainManager.h; sourceTree = "<group>"; };
+		DCD2E1021EB190C9008AB5A4 /* PywKeyChainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywKeyChainManager.m; sourceTree = "<group>"; };
+		DCD2E1061EB190E4008AB5A4 /* PywUUIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywUUIDManager.h; sourceTree = "<group>"; };
+		DCD2E1071EB190E4008AB5A4 /* PywUUIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywUUIDManager.m; sourceTree = "<group>"; };
+		DCD2E10C1EB1A40D008AB5A4 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		DCE5DD9E1E654AD000796094 /* PywAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PywAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE5DDA21E654AD000796094 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCE5DDA41E654AD000796094 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,6 +228,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC73AC5E1EB1DEA8004CB8E6 /* libMobileGestalt.tbd in Frameworks */,
+				DCD2E10D1EB1A40D008AB5A4 /* CoreTelephony.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +303,61 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		DCD2E0BA1EB18384008AB5A4 /* PywHUD */ = {
+			isa = PBXGroup;
+			children = (
+				DCD2E0BB1EB18384008AB5A4 /* Assets */,
+				DCD2E0C81EB18384008AB5A4 /* PywHUDManager.h */,
+				DCD2E0C91EB18384008AB5A4 /* PywHUDManager.m */,
+				DCD2E0CA1EB18384008AB5A4 /* PywProgressHUD.h */,
+				DCD2E0CB1EB18384008AB5A4 /* PywProgressHUD.m */,
+				DCD2E0CC1EB18384008AB5A4 /* PywToast.h */,
+				DCD2E0CD1EB18384008AB5A4 /* PywToast.m */,
+			);
+			path = PywHUD;
+			sourceTree = "<group>";
+		};
+		DCD2E0BB1EB18384008AB5A4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DCD2E0BC1EB18384008AB5A4 /* toast_error.png */,
+				DCD2E0BD1EB18384008AB5A4 /* toast_error@2x.png */,
+				DCD2E0BE1EB18384008AB5A4 /* toast_error@3x.png */,
+				DCD2E0BF1EB18384008AB5A4 /* toast_info.png */,
+				DCD2E0C01EB18384008AB5A4 /* toast_info@2x.png */,
+				DCD2E0C11EB18384008AB5A4 /* toast_info@3x.png */,
+				DCD2E0C21EB18384008AB5A4 /* toast_success.png */,
+				DCD2E0C31EB18384008AB5A4 /* toast_success@2x.png */,
+				DCD2E0C41EB18384008AB5A4 /* toast_success@3x.png */,
+				DCD2E0C51EB18384008AB5A4 /* toast_warning.png */,
+				DCD2E0C61EB18384008AB5A4 /* toast_warning@2x.png */,
+				DCD2E0C71EB18384008AB5A4 /* toast_warning@3x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		DCD2E0FB1EB183D0008AB5A4 /* GetDeviceInfoTools */ = {
+			isa = PBXGroup;
+			children = (
+				DCD2E0FC1EB18402008AB5A4 /* GetDeviceInfoTools.h */,
+				DCD2E0FD1EB18402008AB5A4 /* GetDeviceInfoTools.m */,
+				DCD2E1011EB190C9008AB5A4 /* PywKeyChainManager.h */,
+				DCD2E1021EB190C9008AB5A4 /* PywKeyChainManager.m */,
+				DCD2E1061EB190E4008AB5A4 /* PywUUIDManager.h */,
+				DCD2E1071EB190E4008AB5A4 /* PywUUIDManager.m */,
+			);
+			path = GetDeviceInfoTools;
+			sourceTree = "<group>";
+		};
+		DCD2E10B1EB1A40C008AB5A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC73AC5D1EB1DEA8004CB8E6 /* libMobileGestalt.tbd */,
+				DCD2E10C1EB1A40D008AB5A4 /* CoreTelephony.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DCE5DD951E654AD000796094 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +365,7 @@
 				DCE5DDBA1E654AD000796094 /* PywAppDemoTests */,
 				DCE5DDC51E654AD000796094 /* PywAppDemoUITests */,
 				DCE5DD9F1E654AD000796094 /* Products */,
+				DCD2E10B1EB1A40C008AB5A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -242,6 +382,8 @@
 		DCE5DDA01E654AD000796094 /* PywAppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DCD2E0FB1EB183D0008AB5A4 /* GetDeviceInfoTools */,
+				DCD2E0BA1EB18384008AB5A4 /* PywHUD */,
 				DC78017D1E65BCE100F0EB88 /* Masonry */,
 				DC7801791E65BB1C00F0EB88 /* Login */,
 				DCE5DDD81E654B5C00796094 /* PywButton */,
@@ -410,9 +552,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD2E0EF1EB18384008AB5A4 /* toast_warning@3x.png in Resources */,
+				DCD2E0D41EB18384008AB5A4 /* toast_error@3x.png in Resources */,
 				DCE5DDB11E654AD000796094 /* LaunchScreen.storyboard in Resources */,
+				DCD2E0DD1EB18384008AB5A4 /* toast_info@3x.png in Resources */,
+				DCD2E0E91EB18384008AB5A4 /* toast_warning.png in Resources */,
 				DCE5DDAE1E654AD000796094 /* Assets.xcassets in Resources */,
+				DCD2E0D11EB18384008AB5A4 /* toast_error@2x.png in Resources */,
+				DCD2E0E61EB18384008AB5A4 /* toast_success@3x.png in Resources */,
+				DCD2E0DA1EB18384008AB5A4 /* toast_info@2x.png in Resources */,
+				DCD2E0CE1EB18384008AB5A4 /* toast_error.png in Resources */,
+				DCD2E0E01EB18384008AB5A4 /* toast_success.png in Resources */,
 				DCE5DDAC1E654AD000796094 /* Main.storyboard in Resources */,
+				DCD2E0EC1EB18384008AB5A4 /* toast_warning@2x.png in Resources */,
+				DCD2E0E31EB18384008AB5A4 /* toast_success@2x.png in Resources */,
+				DCD2E0D71EB18384008AB5A4 /* toast_info.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +574,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD2E0E11EB18384008AB5A4 /* toast_success.png in Resources */,
+				DCD2E0D51EB18384008AB5A4 /* toast_error@3x.png in Resources */,
+				DCD2E0E71EB18384008AB5A4 /* toast_success@3x.png in Resources */,
+				DCD2E0CF1EB18384008AB5A4 /* toast_error.png in Resources */,
+				DCD2E0ED1EB18384008AB5A4 /* toast_warning@2x.png in Resources */,
+				DCD2E0EA1EB18384008AB5A4 /* toast_warning.png in Resources */,
+				DCD2E0F01EB18384008AB5A4 /* toast_warning@3x.png in Resources */,
+				DCD2E0DB1EB18384008AB5A4 /* toast_info@2x.png in Resources */,
+				DCD2E0E41EB18384008AB5A4 /* toast_success@2x.png in Resources */,
+				DCD2E0D21EB18384008AB5A4 /* toast_error@2x.png in Resources */,
+				DCD2E0D81EB18384008AB5A4 /* toast_info.png in Resources */,
+				DCD2E0DE1EB18384008AB5A4 /* toast_info@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +593,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD2E0E21EB18384008AB5A4 /* toast_success.png in Resources */,
+				DCD2E0D61EB18384008AB5A4 /* toast_error@3x.png in Resources */,
+				DCD2E0E81EB18384008AB5A4 /* toast_success@3x.png in Resources */,
+				DCD2E0D01EB18384008AB5A4 /* toast_error.png in Resources */,
+				DCD2E0EE1EB18384008AB5A4 /* toast_warning@2x.png in Resources */,
+				DCD2E0EB1EB18384008AB5A4 /* toast_warning.png in Resources */,
+				DCD2E0F11EB18384008AB5A4 /* toast_warning@3x.png in Resources */,
+				DCD2E0DC1EB18384008AB5A4 /* toast_info@2x.png in Resources */,
+				DCD2E0E51EB18384008AB5A4 /* toast_success@2x.png in Resources */,
+				DCD2E0D31EB18384008AB5A4 /* toast_error@2x.png in Resources */,
+				DCD2E0D91EB18384008AB5A4 /* toast_info.png in Resources */,
+				DCD2E0DF1EB18384008AB5A4 /* toast_info@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,9 +621,11 @@
 				DC7801B51E6C0D1400F0EB88 /* PywAlertSelectView.m in Sources */,
 				DC78019C1E65BCE100F0EB88 /* MASViewConstraint.m in Sources */,
 				DC78017C1E65BB3100F0EB88 /* PywLoginCeShiView.m in Sources */,
+				DCD2E1031EB190C9008AB5A4 /* PywKeyChainManager.m in Sources */,
 				DCE5DDA61E654AD000796094 /* AppDelegate.m in Sources */,
 				DC7801BB1E6C0E4B00F0EB88 /* PywTextSize.m in Sources */,
 				DCE5DDDB1E654B5C00796094 /* Button.m in Sources */,
+				DCD2E0F51EB18384008AB5A4 /* PywProgressHUD.m in Sources */,
 				DC99887C1E6DB32A00174B64 /* PywTextField.m in Sources */,
 				DCB5C6D81E6DA31A004C97B5 /* PywSelectAlertView.m in Sources */,
 				DC78019F1E65BCE100F0EB88 /* View+MASAdditions.m in Sources */,
@@ -453,14 +633,18 @@
 				DC7801971E65BCE100F0EB88 /* MASCompositeConstraint.m in Sources */,
 				DC78019B1E65BCE100F0EB88 /* MASViewAttribute.m in Sources */,
 				DC11F1B71E9C85670053F3A1 /* PywCustomTextField.m in Sources */,
+				DCD2E0F81EB18384008AB5A4 /* PywToast.m in Sources */,
 				DC7801991E65BCE100F0EB88 /* MASConstraintMaker.m in Sources */,
 				DC78019D1E65BCE100F0EB88 /* NSArray+MASAdditions.m in Sources */,
 				DC2925551EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */,
 				DC7801A01E65BCE100F0EB88 /* ViewController+MASAdditions.m in Sources */,
 				DC7801981E65BCE100F0EB88 /* MASConstraint.m in Sources */,
 				DC7801B81E6C0D6000F0EB88 /* UIView+Frame.m in Sources */,
+				DCD2E0F21EB18384008AB5A4 /* PywHUDManager.m in Sources */,
 				DC78019A1E65BCE100F0EB88 /* MASLayoutConstraint.m in Sources */,
+				DCD2E0FE1EB18402008AB5A4 /* GetDeviceInfoTools.m in Sources */,
 				DC29254B1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m in Sources */,
+				DCD2E1081EB190E4008AB5A4 /* PywUUIDManager.m in Sources */,
 				DC2925501EA6FE4E00BA7D7B /* PywOpenChestItem.m in Sources */,
 				DCE5DDA31E654AD000796094 /* main.m in Sources */,
 			);
@@ -471,13 +655,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC2925561EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */,
+				DCD2E0F91EB18384008AB5A4 /* PywToast.m in Sources */,
+				DCD2E0F61EB18384008AB5A4 /* PywProgressHUD.m in Sources */,
 				DC11F1B81E9C85670053F3A1 /* PywCustomTextField.m in Sources */,
 				DC8AADF41E704ACA00D72871 /* SegmentViewController.m in Sources */,
+				DCD2E1091EB190E4008AB5A4 /* PywUUIDManager.m in Sources */,
 				DC2925511EA6FE4E00BA7D7B /* PywOpenChestItem.m in Sources */,
+				DCD2E0F31EB18384008AB5A4 /* PywHUDManager.m in Sources */,
 				DC99887D1E6DB32A00174B64 /* PywTextField.m in Sources */,
+				DCD2E0FF1EB18402008AB5A4 /* GetDeviceInfoTools.m in Sources */,
 				DCE5DDBC1E654AD000796094 /* PywAppDemoTests.m in Sources */,
 				DC29254C1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m in Sources */,
 				DC99887A1E6DB32A00174B64 /* PywLoginView.m in Sources */,
+				DCD2E1041EB190C9008AB5A4 /* PywKeyChainManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,13 +676,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC2925571EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */,
+				DCD2E0FA1EB18384008AB5A4 /* PywToast.m in Sources */,
+				DCD2E0F71EB18384008AB5A4 /* PywProgressHUD.m in Sources */,
 				DC11F1B91E9C85670053F3A1 /* PywCustomTextField.m in Sources */,
 				DC8AADF51E704ACA00D72871 /* SegmentViewController.m in Sources */,
+				DCD2E10A1EB190E4008AB5A4 /* PywUUIDManager.m in Sources */,
 				DC2925521EA6FE4E00BA7D7B /* PywOpenChestItem.m in Sources */,
+				DCD2E0F41EB18384008AB5A4 /* PywHUDManager.m in Sources */,
 				DC99887E1E6DB32A00174B64 /* PywTextField.m in Sources */,
+				DCD2E1001EB18402008AB5A4 /* GetDeviceInfoTools.m in Sources */,
 				DCE5DDC71E654AD000796094 /* PywAppDemoUITests.m in Sources */,
 				DC29254D1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m in Sources */,
 				DC99887B1E6DB32A00174B64 /* PywLoginView.m in Sources */,
+				DCD2E1051EB190C9008AB5A4 /* PywKeyChainManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +822,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 84K92AJVXZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PywAppDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -639,6 +839,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 84K92AJVXZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PywAppDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -651,6 +855,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PywAppDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ampaw.PywAppDemoTests;
@@ -663,6 +871,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PywAppDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ampaw.PywAppDemoTests;
@@ -674,6 +886,10 @@
 		DCE5DDD21E654AD000796094 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PywAppDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ampaw.PywAppDemoUITests;
@@ -685,6 +901,10 @@
 		DCE5DDD31E654AD000796094 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PywAppDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ampaw.PywAppDemoUITests;

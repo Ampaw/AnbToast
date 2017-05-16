@@ -18,6 +18,9 @@
 
 #import "PywOpenChestItem.h"
 #import "PywOpenChestAlertView.h"
+#import "GetDeviceInfoTools.h"
+#import "PywUUIDManager.h"
+#import "GetDeviceInfoTools.h"
 
 @interface ViewController ()<PywLoginViewDelegate>
 @property(nonatomic, strong) Button *loginBtn;
@@ -29,14 +32,85 @@
 
 @implementation ViewController
 
+- (void)test
+{
+    NSArray *array1 = @[@"1",@"2",@"3",@"4",@"5",@"6",@"8"];
+    NSArray *array2 = @[@"1",@"2",@"3",@"4",@"5",@"67",@"7"];
+    
+    NSArray *arr = [self filterApps:array1 cacheAllApps:array2];
+    NSLog(@"两个数组余集：arr = %@",arr);
+    
+//    NSMutableSet *set1 = [self mSet1:array1 array2:array2];
+//    NSMutableSet *set2 = [self mSet2:array1 array2:array2];
+//    
+//    NSMutableSet *mSet = [NSMutableSet set];
+//    [mSet unionSet:set1];
+//    [mSet unionSet:set2];
+//    NSLog(@"新的Set = %@",mSet);
+//    
+//    NSArray *array = [mSet allObjects];
+//    NSLog(@"\n取出差集组成新的数组：array = %@",array);
+    
+//    NSArray *arr = [self filterAllApps:array1 andCacheAllApps:array2];
+//    NSLog(@"\n新的数组：arr = %@",arr);
+}
+
+- (NSArray *)filterApps:(NSArray *)allApps cacheAllApps:(NSArray *)cacheAllApps
+{
+    NSMutableSet *setAllApps1 = [NSMutableSet setWithArray:allApps];
+    NSMutableSet *setCacheAllApps1 = [NSMutableSet setWithArray:cacheAllApps];
+    [setAllApps1 minusSet:setCacheAllApps1];
+    
+    NSMutableSet *setAllApps2 = [NSMutableSet setWithArray:allApps];
+    NSMutableSet *setCacheAllApps2 = [NSMutableSet setWithArray:cacheAllApps];
+    [setCacheAllApps2 minusSet:setAllApps2];
+    
+    NSMutableSet *mSet = [NSMutableSet set];
+    [mSet unionSet:setAllApps1];
+    [mSet unionSet:setCacheAllApps2];
+    
+    return [mSet allObjects];
+}
+
+- (NSMutableSet *)mSet1:(NSArray *)array1 array2:(NSArray *)array2
+{
+//    NSArray *array1 = @[@"1",@"2",@"3",@"4",@"5",@"6",@"8"];
+//    NSArray *array2 = @[@"1",@"2",@"3",@"4",@"5",@"67",@"7"];
+    NSMutableSet *set1 = [NSMutableSet setWithArray:array1];
+    NSMutableSet *set2 = [NSMutableSet setWithArray:array2];
+    
+    [set1 minusSet:set2];      //取差集后 set1中为2，3，5，6
+    NSLog(@"set1 = %@",set1);
+    return set1;
+}
+- (NSMutableSet *)mSet2:(NSArray *)array1 array2:(NSArray *)array2
+{
+//    NSArray *array1 = @[@"1",@"2",@"3",@"4",@"5",@"6",@"8"];
+//    NSArray *array2 = @[@"1",@"2",@"3",@"4",@"5",@"67",@"7"];
+    NSMutableSet *set1 = [NSMutableSet setWithArray:array1];
+    NSMutableSet *set2 = [NSMutableSet setWithArray:array2];
+    
+    [set2 minusSet:set1];      //取差集后 set1中为2，3，5，6
+    NSLog(@"set2 = %@",set2);
+    return set2;
+}
+
+- (NSArray *)filterAllApps:(NSArray *)allApps andCacheAllApps:(NSArray *)cacheAllApps {
+    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",allApps];
+    //得到两个数组中不同的数据
+    NSArray * reslutFilteredArray = [cacheAllApps filteredArrayUsingPredicate:filterPredicate];
+    return reslutFilteredArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self test];
     
     Button *loginBtn = [[Button alloc] initWithAlignmentStatus:ButtonStatusNormal];
     [loginBtn setBackgroundColor:[UIColor blueColor]];
     [loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
-    loginBtn.titleLabel.font = [UIFont systemFontOfSize:20];
+    loginBtn.titleLabel.font = [UIFont systemFontOfSize:16];
     loginBtn.frame = CGRectMake(100, 100, 80, 40);
     [loginBtn addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:loginBtn];
@@ -47,6 +121,14 @@
     _praceLabel.layer.borderWidth = 1.f;
     _praceLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:_praceLabel];
+    
+    Button *UDIDbtn = [[Button alloc] initWithAlignmentStatus:ButtonStatusNormal];
+    [UDIDbtn setBackgroundColor:[UIColor blueColor]];
+    [UDIDbtn setTitle:@"获取UDID" forState:UIControlStateNormal];
+    UDIDbtn.titleLabel.font = [UIFont systemFontOfSize:16];
+    UDIDbtn.frame = CGRectMake(100, 200, 100, 40);
+    [UDIDbtn addTarget:self action:@selector(getUDID:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:UDIDbtn];
     
 //    UIImageView *leftView = [[UIImageView alloc] init];
 //    leftView.image = [UIImage imageNamed:@"tabbar_discover"];
@@ -145,6 +227,36 @@
         default:
             break;
     }
+}
+
+- (void)getUDID:(id)sender
+{
+    NSLog(@"\nidfa = %@\nuuid = %@\nmacaddress1 = %@\nmacaddress2 = %@\n",[GetDeviceInfoTools getIDFA],[GetDeviceInfoTools getUUID],[GetDeviceInfoTools getMacAddress],[GetDeviceInfoTools get2MacAddress]);
+    NSLog(@"方式二uuid = %@",[PywUUIDManager getUUID]);
+    
+    /*
+     idfa = F3D1141A-A349-4236-A3AD-09489E96B0DD
+     uuid = 3C946923-6EC7-4CDB-9B9F-57B05EAB1629
+     macaddress1 = 020000000000
+     macaddress2 = 02:00:00:00:00:00
+     uuid = A052753C-B41D-45D3-A83A-4F84271DCC23
+     
+     idfa = F3D1141A-A349-4236-A3AD-09489E96B0DD
+     uuid = 3C946923-6EC7-4CDB-9B9F-57B05EAB1629
+     macaddress1 = 020000000000
+     macaddress2 = 02:00:00:00:00:00
+     uuid = A052753C-B41D-45D3-A83A-4F84271DCC23
+     
+     idfa = F3D1141A-A349-4236-A3AD-09489E96B0DD
+     uuid = 71071948-A016-4E92-B638-03EE2968CCE2
+     macaddress1 = 020000000000
+     macaddress2 = 02:00:00:00:00:00
+     uuid = A052753C-B41D-45D3-A83A-4F84271DCC23
+     */
+    
+    
+    NSLog(@"IMEL = %@",[GetDeviceInfoTools IMEI]);
+    NSLog(@"UDID = %@",[GetDeviceInfoTools UDID]);
 }
 
 
