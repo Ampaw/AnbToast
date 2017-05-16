@@ -34,6 +34,13 @@
 		DC7801B51E6C0D1400F0EB88 /* PywAlertSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801B41E6C0D1400F0EB88 /* PywAlertSelectView.m */; };
 		DC7801B81E6C0D6000F0EB88 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801B71E6C0D6000F0EB88 /* UIView+Frame.m */; };
 		DC7801BB1E6C0E4B00F0EB88 /* PywTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7801BA1E6C0E4B00F0EB88 /* PywTextSize.m */; };
+		DC8236691ECADCF200D96DFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8236681ECADCF200D96DFF /* CoreGraphics.framework */; };
+		DC82366C1ECADD1400D96DFF /* AuthcodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC82366B1ECADD1400D96DFF /* AuthcodeView.m */; };
+		DC82366D1ECADD1400D96DFF /* AuthcodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC82366B1ECADD1400D96DFF /* AuthcodeView.m */; };
+		DC82366E1ECADD1400D96DFF /* AuthcodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC82366B1ECADD1400D96DFF /* AuthcodeView.m */; };
+		DC8236711ECAEA0C00D96DFF /* MQVerCodeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC82366F1ECAEA0C00D96DFF /* MQVerCodeImageView.m */; };
+		DC8236721ECAEA0C00D96DFF /* MQVerCodeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC82366F1ECAEA0C00D96DFF /* MQVerCodeImageView.m */; };
+		DC8236731ECAEA0C00D96DFF /* MQVerCodeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC82366F1ECAEA0C00D96DFF /* MQVerCodeImageView.m */; };
 		DC8AADF31E704ACA00D72871 /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8AADF21E704ACA00D72871 /* SegmentViewController.m */; };
 		DC8AADF41E704ACA00D72871 /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8AADF21E704ACA00D72871 /* SegmentViewController.m */; };
 		DC8AADF51E704ACA00D72871 /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8AADF21E704ACA00D72871 /* SegmentViewController.m */; };
@@ -170,6 +177,11 @@
 		DC7801B71E6C0D6000F0EB88 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		DC7801B91E6C0E4B00F0EB88 /* PywTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PywTextSize.h; sourceTree = "<group>"; };
 		DC7801BA1E6C0E4B00F0EB88 /* PywTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywTextSize.m; sourceTree = "<group>"; };
+		DC8236681ECADCF200D96DFF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DC82366A1ECADD1400D96DFF /* AuthcodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthcodeView.h; sourceTree = "<group>"; };
+		DC82366B1ECADD1400D96DFF /* AuthcodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthcodeView.m; sourceTree = "<group>"; };
+		DC82366F1ECAEA0C00D96DFF /* MQVerCodeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQVerCodeImageView.m; sourceTree = "<group>"; };
+		DC8236701ECAEA0C00D96DFF /* MQVerCodeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQVerCodeImageView.h; sourceTree = "<group>"; };
 		DC8AADF11E704ACA00D72871 /* SegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentViewController.h; sourceTree = "<group>"; };
 		DC8AADF21E704ACA00D72871 /* SegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentViewController.m; sourceTree = "<group>"; };
 		DC9988751E6DB32A00174B64 /* PywLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PywLoginView.m; sourceTree = "<group>"; };
@@ -228,6 +240,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC8236691ECADCF200D96DFF /* CoreGraphics.framework in Frameworks */,
 				DC73AC5E1EB1DEA8004CB8E6 /* libMobileGestalt.tbd in Frameworks */,
 				DCD2E10D1EB1A40D008AB5A4 /* CoreTelephony.framework in Frameworks */,
 			);
@@ -303,6 +316,17 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		DC8236671ECADC5600D96DFF /* AuthCode */ = {
+			isa = PBXGroup;
+			children = (
+				DC82366A1ECADD1400D96DFF /* AuthcodeView.h */,
+				DC82366B1ECADD1400D96DFF /* AuthcodeView.m */,
+				DC82366F1ECAEA0C00D96DFF /* MQVerCodeImageView.m */,
+				DC8236701ECAEA0C00D96DFF /* MQVerCodeImageView.h */,
+			);
+			path = AuthCode;
+			sourceTree = "<group>";
+		};
 		DCD2E0BA1EB18384008AB5A4 /* PywHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +376,7 @@
 		DCD2E10B1EB1A40C008AB5A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC8236681ECADCF200D96DFF /* CoreGraphics.framework */,
 				DC73AC5D1EB1DEA8004CB8E6 /* libMobileGestalt.tbd */,
 				DCD2E10C1EB1A40D008AB5A4 /* CoreTelephony.framework */,
 			);
@@ -382,6 +407,7 @@
 		DCE5DDA01E654AD000796094 /* PywAppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DC8236671ECADC5600D96DFF /* AuthCode */,
 				DCD2E0FB1EB183D0008AB5A4 /* GetDeviceInfoTools */,
 				DCD2E0BA1EB18384008AB5A4 /* PywHUD */,
 				DC78017D1E65BCE100F0EB88 /* Masonry */,
@@ -512,8 +538,8 @@
 				TargetAttributes = {
 					DCE5DD9D1E654AD000796094 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 84K92AJVXZ;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 293VM2BUQ6;
+						ProvisioningStyle = Manual;
 					};
 					DCE5DDB61E654AD000796094 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -615,6 +641,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC82366C1ECADD1400D96DFF /* AuthcodeView.m in Sources */,
+				DC8236711ECAEA0C00D96DFF /* MQVerCodeImageView.m in Sources */,
 				DC78019E1E65BCE100F0EB88 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				DC9988791E6DB32A00174B64 /* PywLoginView.m in Sources */,
 				DCE5DDA91E654AD000796094 /* ViewController.m in Sources */,
@@ -657,6 +685,7 @@
 				DC2925561EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */,
 				DCD2E0F91EB18384008AB5A4 /* PywToast.m in Sources */,
 				DCD2E0F61EB18384008AB5A4 /* PywProgressHUD.m in Sources */,
+				DC8236721ECAEA0C00D96DFF /* MQVerCodeImageView.m in Sources */,
 				DC11F1B81E9C85670053F3A1 /* PywCustomTextField.m in Sources */,
 				DC8AADF41E704ACA00D72871 /* SegmentViewController.m in Sources */,
 				DCD2E1091EB190E4008AB5A4 /* PywUUIDManager.m in Sources */,
@@ -666,6 +695,7 @@
 				DCD2E0FF1EB18402008AB5A4 /* GetDeviceInfoTools.m in Sources */,
 				DCE5DDBC1E654AD000796094 /* PywAppDemoTests.m in Sources */,
 				DC29254C1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m in Sources */,
+				DC82366D1ECADD1400D96DFF /* AuthcodeView.m in Sources */,
 				DC99887A1E6DB32A00174B64 /* PywLoginView.m in Sources */,
 				DCD2E1041EB190C9008AB5A4 /* PywKeyChainManager.m in Sources */,
 			);
@@ -678,6 +708,7 @@
 				DC2925571EA74DD300BA7D7B /* PywOpenChestModel.m in Sources */,
 				DCD2E0FA1EB18384008AB5A4 /* PywToast.m in Sources */,
 				DCD2E0F71EB18384008AB5A4 /* PywProgressHUD.m in Sources */,
+				DC8236731ECAEA0C00D96DFF /* MQVerCodeImageView.m in Sources */,
 				DC11F1B91E9C85670053F3A1 /* PywCustomTextField.m in Sources */,
 				DC8AADF51E704ACA00D72871 /* SegmentViewController.m in Sources */,
 				DCD2E10A1EB190E4008AB5A4 /* PywUUIDManager.m in Sources */,
@@ -687,6 +718,7 @@
 				DCD2E1001EB18402008AB5A4 /* GetDeviceInfoTools.m in Sources */,
 				DCE5DDC71E654AD000796094 /* PywAppDemoUITests.m in Sources */,
 				DC29254D1EA6FBAD00BA7D7B /* PywOpenChestAlertView.m in Sources */,
+				DC82366E1ECADD1400D96DFF /* AuthcodeView.m in Sources */,
 				DC99887B1E6DB32A00174B64 /* PywLoginView.m in Sources */,
 				DCD2E1051EB190C9008AB5A4 /* PywKeyChainManager.m in Sources */,
 			);
@@ -821,7 +853,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 84K92AJVXZ;
+				DEVELOPMENT_TEAM = 293VM2BUQ6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -831,6 +863,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ampaw.PywAppDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c297115c-bd7e-4110-bca0-100816b16b27";
+				PROVISIONING_PROFILE_SPECIFIER = CodeResignDevelopment;
 			};
 			name = Debug;
 		};
@@ -838,7 +872,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 84K92AJVXZ;
+				DEVELOPMENT_TEAM = 293VM2BUQ6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -848,6 +882,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ampaw.PywAppDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c297115c-bd7e-4110-bca0-100816b16b27";
+				PROVISIONING_PROFILE_SPECIFIER = CodeResignDevelopment;
 			};
 			name = Release;
 		};

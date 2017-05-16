@@ -22,10 +22,14 @@
 #import "PywUUIDManager.h"
 #import "GetDeviceInfoTools.h"
 
+#import "AuthcodeView.h"
+#import "MQVerCodeImageView.h"
+
 @interface ViewController ()<PywLoginViewDelegate>
 @property(nonatomic, strong) Button *loginBtn;
 @property(nonatomic, strong) UIView *accountLoginView;
 @property(nonatomic, strong) UILabel *praceLabel;
+@property(nonatomic, strong) MQVerCodeImageView *codeImageView;
 
 @property(nonatomic, assign) BOOL is_open_chest;
 @end
@@ -130,6 +134,22 @@
     [UDIDbtn addTarget:self action:@selector(getUDID:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:UDIDbtn];
     
+    //显示验证码界面
+    AuthcodeView *authCodeView = [[AuthcodeView alloc] initWithFrame:CGRectMake(100, 260, 100, 40)];
+    [self.view addSubview:authCodeView];
+    
+    _codeImageView = [[MQVerCodeImageView alloc] initWithFrame:CGRectMake(100, 310, 100, 40)];
+    _codeImageView.bolck = ^(NSString *imageCodeStr){//看情况是否需要
+        NSLog(@"imageCodeStr = %@",imageCodeStr);
+    };
+    _codeImageView.isRotation = YES;
+    [_codeImageView freshVerCode];
+    
+    //点击刷新
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)];
+    [_codeImageView addGestureRecognizer:tap];
+    [self.view addSubview: _codeImageView];
+    
 //    UIImageView *leftView = [[UIImageView alloc] init];
 //    leftView.image = [UIImage imageNamed:@"tabbar_discover"];
 //    
@@ -187,6 +207,12 @@
 //        make.height.mas_equalTo(50);
 //    }];
 }
+
+- (void)tapClick:(UITapGestureRecognizer*)tap
+{
+    [_codeImageView freshVerCode];
+}
+
 //  颜色转换为背景图片
 - (UIImage *)imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
